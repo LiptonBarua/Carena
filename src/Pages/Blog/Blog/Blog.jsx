@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
 
@@ -76,23 +77,10 @@ const Blog = () => {
                 )
               }
 
-                   
-                
-
-                
-
-                
-
-                
                     </div>
 
                     <div className="mt-12 text-center">
-                        <a
-                            href="#"
-                            className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
-                        >
-                            Get Started Today
-                        </a>
+                        <Link to='/'><button className="inline-block rounded bg-[#d01818] px-12 py-3 text-sm font-medium text-white transition hover:bg-[#d01818] focus:outline-none focus:ring focus:ring-yellow-400">Get Started Today</button></Link>
                     </div>
                 </div>
             </section>
