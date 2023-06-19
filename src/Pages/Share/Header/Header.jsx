@@ -27,9 +27,9 @@ const Navber = () => {
        <li>
 							<Link to={`${isSeller ? "/dashboard/addProduct":''}${isAdmin ? "/dashboard/allSeller":''}${isBuyer ? "/dashboard":''}`}>Dashboard</Link>
 						</li>
-        
-          <li><button onClick={handleLogOut} className='bg-[#d01818] uppercase text-white font-semibold'>Log Out</button></li>
-          
+            
+
+          <button onClick={handleLogOut} className='bg-[#d01818] px-6 py-3 uppercase text-white font-semibold'>Log Out</button>
         </>
         :
         <li><Link to='/login'>Login</Link></li>

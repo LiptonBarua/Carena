@@ -10,7 +10,7 @@ const Banner = () => {
                         <p className="md:text-justify mt-6 mb-8 text-lg sm:mb-12">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
                             <button className="text-[white] border border-[#d01818] hover:bg-[black] hover:border-white  active:bg-[#d01818] bg-[#d01818] font-semibold text-lg px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Starting</button>
-                            <button className="text-white border border-white hover:bg-[#d01818] hover:text-white hover:border-[#d01818] active:bg-[#d01818] px-8 py-3 text-lg font-semibold rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Book Now</button>
+                            <button className="text-white border border-white hover:bg-[#d01818] hover:text-white hover:border-[#d01818] active:bg-[#d01818] px-8 py-3 text-lg font-semibold outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Book Now</button>
                         </div>
                     </div>
                     <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">

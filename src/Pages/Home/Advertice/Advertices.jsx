@@ -33,11 +33,11 @@ const Advertices = ({ advertice }) => {
           className="h-64 w-full object-cover"
         />
 
-        <div className=' flex justify-end -mt-12'>
-          <button className='bg-[#d01818] text-white hover:bg-black font-bold  px-6 py-3'>
+        <div className=' flex justify-end -mt-10'>
+          <button className='bg-[#d01818] text-white hover:bg-black font-bold  px-5 py-2'>
             <div className='flex items-center'>
-              <del className='text-sm mr-1'>{original}</del>
-              <h1 className='text-md'>{resale}</h1>
+              <del className='text-sm mr-1 font-italic'>{original}</del>
+              <h1 className='text-md font-italic'>{resale}</h1>
             </div>
           </button>
 
