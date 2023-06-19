@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CategorieCard = ({categorie}) => {
     const { image, brand} = categorie;
-    console.log(categorie)
+   
     return (
        <div className=''>
           <div className="card card-compact h-[230px] shadow-xl">

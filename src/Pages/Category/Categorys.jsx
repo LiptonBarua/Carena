@@ -1,8 +1,8 @@
 
-import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Category from './Category';
 import CategoryModel from './CategoryModel';
+import { useState } from 'react';
 
 
 
@@ -10,7 +10,7 @@ const Categorys = () => {
  
   const [productsName, setProductsName] = useState('')
   const products= useLoaderData();
-  console.log(products)
+
     return (
       <section className='py-36 md:max-w-[92%] mx-auto'>
          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

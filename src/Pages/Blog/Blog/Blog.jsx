@@ -46,12 +46,12 @@ const Blog = () => {
               {
                 blogQustion?.map((blog, i)=> <div key={blog.id}>
                     <a
-                            className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+                            className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-[#d01818]/10 hover:shadow-[#d01818]/10"
                             href="/services/digital-campaigns"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-10 w-10 text-pink-500"
+                                className="h-10 w-10 text-[#d01818]"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"

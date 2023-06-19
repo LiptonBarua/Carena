@@ -31,14 +31,14 @@ const Login = () => {
         signIn(data.email, data.password)
         .then(result=>{
             const user= result.user;
-            console.log(user);
+         
             setLoginUserEmail(data.email)
             toast.success('Login Success');
             // navigate(from, {replace: true})
         
         })
         .catch(error=>{
-            console.log(error)
+            toast.error(error)
         })
     }
 
@@ -49,7 +49,7 @@ const Login = () => {
             toast.success('Login Success');
             navigate(from, {replace: true})
         })
-        .then(error=>console.log(error))
+        .then(error=>{toast.error(error)})
     }
     return (
         <div className=' flex justify-center items-center my-24' >

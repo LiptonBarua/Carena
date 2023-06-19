@@ -9,7 +9,7 @@ const useSaller = email => {
             fetch(`https://server12.vercel.app/users/seller/${email}`)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                
                     setisSeller(data.isSeller);
                     setisSellerLoading(false);
 })

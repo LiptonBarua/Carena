@@ -1,6 +1,7 @@
-import React, { useContext} from 'react';
+
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { useContext } from 'react';
 
 const CategoryModel = ({ productsName}) => {
    
@@ -26,7 +27,7 @@ const CategoryModel = ({ productsName}) => {
             title
         }
 
-        console.log(booking)
+     
         fetch('https://server12.vercel.app/booking', {
             method: 'POST',
             headers: {
@@ -37,7 +38,7 @@ const CategoryModel = ({ productsName}) => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data);
+          
             if(data.acknowledged){
                
                 toast.success('Booking add Successfully');

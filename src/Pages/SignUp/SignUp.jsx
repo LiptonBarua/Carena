@@ -1,10 +1,10 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useToken from '../../Hookes/useToken';
+import { useContext, useState } from 'react';
 
 
 const SignUp = () => {
@@ -18,14 +18,24 @@ const SignUp = () => {
         navigate('/')
     }
 
-    const googleProvider = new GoogleAuthProvider()
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                toast.success('User Created Successfully');
+                navigate('/')
+            })
+            .catch(error => {toast.error(error)})
+    }
+
     const handleSignUp = data => {
 
         createUser(data.email, data.password)
             .then(result => {
-                const user = result.user;
-               
-                console.log(user);
+                const user = result.user;       
                 toast.success('User Created Successfully');
                 // reset();
                 
@@ -34,7 +44,7 @@ const SignUp = () => {
                     email: data.email,
                     role: data.role
                 }
-                console.log(userInfo)
+            
                 updateUser(userInfo)
                     .then(() => {
                         savedUser(data.name, data.email, data.role);
@@ -44,25 +54,17 @@ const SignUp = () => {
                     .catch(() => { })
             })
             .catch(error => {
-                console.log(error)
+               toast.error(error)
             })
 
     }
 
-    const handleGoogleSignIn = () => {
-        googleSignIn(googleProvider)
-            .then(result => {
-                const user = result.user;
-                toast.success('User Created Successfully');
-                navigate('/')
-            })
-            .catch(error => console.log(error))
-    }
+  
 
     const savedUser = (name, email, role) => {
 
         const users = { name, email,role}
-        console.log(users)
+    
         fetch('https://server12.vercel.app/users', {
             method: 'POST',
             headers: {

@@ -1,5 +1,5 @@
 import moment from 'moment/moment';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MdVerified} from "react-icons/md";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
@@ -9,7 +9,7 @@ const Category = ({products, setProductsName}) => {
     const{name,email, title, location, date, image, original, resale, phone, year} =products;
     const [loadUserData, setLoadUserData] = useState([]);
 		const [userData, setUserData] = useState({});
-    console.log(userData)
+   
 		useEffect(() => {
 			
 			fetch(`https://server12.vercel.app/users`)

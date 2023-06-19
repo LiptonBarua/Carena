@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import Advertices from './Advertices';
 
 const Advertice = () => {
@@ -15,7 +16,7 @@ const Advertice = () => {
       fetch(`https://server12.vercel.app/products?advertice=true`)
       .then(res=>res.json())
       .then(data=>{
-        console.log(data)
+      
         setAdvertice(data)
         
       })

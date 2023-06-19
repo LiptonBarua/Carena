@@ -7,7 +7,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 const Advertices = ({ advertice }) => {
   const [userData, setUserData] = useState({});
-  console.log(userData)
+
   const { name, email, title, location, date, time, image, original, resale, phone, year } = advertice;
   const [loadUserData, setLoadUserData] = useState([]);
 
