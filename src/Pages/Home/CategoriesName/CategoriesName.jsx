@@ -19,7 +19,7 @@ const CategoriesName = () => {
             <h1 className='text-2xl text-center mb-6'>All Category</h1>
             <div className='px-5 md:px-0 grid grid-cols-1 md:grid-cols-3 gap-6'>
             {
-                categories?.map(categorie=><Link to={`/product/${categorie.brand}`}><CategorieCard key={categorie._id} categorie={categorie}></CategorieCard></Link>)
+                categories?.map(categorie=><Link to={`/category/${categorie.brand}`}><CategorieCard key={categorie._id} categorie={categorie}></CategorieCard></Link>)
             }
             </div>
         </div>
