@@ -7,6 +7,13 @@ import Blog from "../../Pages/Blog/Blog/Blog";
 import Categorys from "../../Pages/Category/Categorys";
 import DefaultPage from "../../Pages/DefaultPage/DefaultPage";
 import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import SellerRouter from "../SellerRouter/SellerRouter";
+import Payment from "../../Dashboard/Payment/Payment";
+import AdminRouter from "../AdminRouter/AdminRouter";
+import AllUser from "../../Dashboard/AllUser/AllUser";
+import AddProduct from "../../Dashboard/AddProduct/AddProduct";
+import BookingCollection from "../../Dashboard/BookingCollection/BookingCollection";
 
 const router = createBrowserRouter([
     {
@@ -38,7 +45,21 @@ const router = createBrowserRouter([
         errorElement: <DefaultPage></DefaultPage>,
         element: <DashboardLayout></DashboardLayout>, children: [
             {
-
+                path: '/dashboard', element: <PrivateRouter><BookingCollection></BookingCollection></PrivateRouter>
+            },
+            // {
+            //     path: '/dashboard/myProducts', element: <SellerRouter><MyProducts></MyProducts></SellerRouter>
+            //  },
+            {
+                path: '/dashboard/addProduct', element: <SellerRouter><AddProduct></AddProduct></SellerRouter>
+            },
+            {
+                path: '/dashboard/allSeller', index:true, element: <PrivateRouter><AdminRouter><AllUser></AllUser></AdminRouter></PrivateRouter>
+            },
+            {
+                path: '/dashboard/payments/:id', 
+                element: <Payment></Payment>,
+                loader: ({params})=>fetch(`https://server12.vercel.app/booking/${params.id}`)
             }
         ]
     }

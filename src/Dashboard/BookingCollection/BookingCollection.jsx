@@ -1,16 +1,15 @@
-import React, { useContext } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-import Loading from '../../Pages/Loading/Loading';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from "axios";
 import useBuyer from '../../Hookes/useBuyer';
-import './Booking.css'
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import React, { useContext } from 'react';
 
 
 
 
-const Bookings = () => {
+
+
+const BookingCollection = () => {
    const {user} = useContext(AuthContext);
    const [isBuyer] = useBuyer(user?.email);
 
@@ -35,7 +34,7 @@ const Bookings = () => {
    <>
 {
      isBuyer && <div>
-     <h1 className='text-2xl mt-10 mb-6'>My Orders: {bookings.length}</h1>
+     <h1 className='text-2xl mt-10 mb-6'>Booking: {bookings.length}</h1>
            <div>
            
            <div className="overflow-x-auto">
@@ -79,4 +78,4 @@ const Bookings = () => {
     );
 };
 
-export default Bookings;
+export default BookingCollection;
