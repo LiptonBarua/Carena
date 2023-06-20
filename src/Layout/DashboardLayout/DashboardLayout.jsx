@@ -9,6 +9,7 @@ import Header from '../../Pages/Share/Header/Header';
 
 
 
+
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email);
@@ -19,7 +20,7 @@ const DashboardLayout = () => {
   const { data: sellectData = [] } = useQuery({
     queryKey: ['sellectDatabase'],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:8000/users/${user?.email}`)
+      const res = await fetch(`https://resele-server-side.vercel.app/users/${user?.email}`)
       const data = await res.json()
       return data;
     }
@@ -32,26 +33,26 @@ const DashboardLayout = () => {
      
 <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content my-24 pl-6">
+  <div className="drawer-content my-24">
           <Outlet></Outlet>
         </div>
   <div className="drawer-side">
-    <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-    <ul className="bg-[#d01818] text-white text-lg ont menu pt-24 w-44 lg:w-72 h-full text-base-content">
+    <label htmlFor="my-drawer-2" className=""></label> 
+    <ul className="bg-[#d01818] text-white lg:pl-14 text-lg ont menu pt-24 lg:pt-28 w-44 lg:w-72 h-full text-base-content">
     {
-              isBuyer &&  (<li><Link to='/dashboard'>My Orders</Link></li>
+              isBuyer &&  (<Link to='/dashboard'>My Orders</Link>
             )}
             {
               isAdmin && (<>
 
-              <li><Link to='/dashboard/allSeller'>All Users</Link></li>
+              <Link to='/dashboard/allUser'>All Users</Link>
                
               </>
             )}
             {
               isSeller && (<>
-                <li><Link to='/dashboard/addProduct'>Add Product</Link></li>
-                <li><Link to='/dashboard/myProducts'>Products</Link></li>
+                <li className='hover:text-white'><Link to='/dashboard/addProduct'>Add Product</Link></li>
+                <li className='hover:text-white'><Link to='/dashboard/myProducts'>Products</Link></li>
               </>
             )}
 

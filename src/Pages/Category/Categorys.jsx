@@ -9,7 +9,9 @@ import { useState } from 'react';
 const Categorys = () => {
  
   const [productsName, setProductsName] = useState('')
+
   const products= useLoaderData();
+  console.log(products)
 
     return (
       <section className='py-36 md:max-w-[92%] mx-auto'>

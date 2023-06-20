@@ -1,18 +1,24 @@
 import moment from 'moment/moment';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MdVerified} from "react-icons/md";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useAdmin from '../../Hookes/useAdmin';
+import useSaller from '../../Hookes/useSaller';
+import useBuyer from '../../Hookes/useBuyer';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
 const Category = ({products, setProductsName}) => {
     const{name,email, title, location, date, image, original, resale, phone, year} =products;
     const [loadUserData, setLoadUserData] = useState([]);
 		const [userData, setUserData] = useState({});
-   
+    const{user}=useContext(AuthContext)
+  const [isBuyer] = useBuyer(user?.email);
+
 		useEffect(() => {
 			
-			fetch(`https://server12.vercel.app/users`)
+			fetch(` https://resele-server-side.vercel.app/users`)
 				.then(res => res.json())
 			.then(data => setLoadUserData(data))
 		}, []);
@@ -61,7 +67,10 @@ const Category = ({products, setProductsName}) => {
     <p>Location: {location}</p>
     <p>Phone: {phone}</p>
     <div>
-<label onClick={()=>setProductsName(products)} htmlFor="product-modal" className=" mb-3 mt-6 btn btn-sm w-full text-white hover:text-black bg-[#d01818]">Book Now</label>
+      {
+        isBuyer && <div><label onClick={()=>setProductsName(products)} htmlFor="product-modal" className=" mb-3 mt-6 btn btn-sm w-full text-white hover:text-black bg-[#d01818]">Book Now</label></div>
+
+      }
 </div>
   </div>
 </article>

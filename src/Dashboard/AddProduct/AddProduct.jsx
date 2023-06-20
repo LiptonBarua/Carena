@@ -11,15 +11,15 @@ const AddProduct = () => {
 
     const { user } = useContext(AuthContext)
     const date = new Date();
-    const year= new Date();
+    const year = new Date();
 
-    const imgHostKey = process.env.REACT_APP_imgbb_key;
+    // const imgHostKey = process.env.REACT_APP_imgbb_key;
 
 
     const { data: categories = [], reset } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
-            const res = await fetch('https://assianment-server-12.vercel.app/category')
+            const res = await fetch('https://resele-server-side.vercel.app/category')
             const data = await res.json();
             return data;
         }
@@ -28,10 +28,10 @@ const AddProduct = () => {
     const handleAddProduct = data => {
 
         const image = data.image[0]
-     
+
         const formData = new FormData();
         formData.append('image', image);
-        const uri = `https://api.imgbb.com/1/upload?key=${imgHostKey}`
+        const uri = `https://api.imgbb.com/1/upload?key=d0ee0f160648d3906c64599f51fb220b`
         fetch(uri, {
             method: 'POST',
             body: formData
@@ -56,7 +56,7 @@ const AddProduct = () => {
                         year,
                         date
                     }
-                    fetch('https://server12.vercel.app/product', {
+                    fetch(' https://resele-server-side.vercel.app/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -77,72 +77,88 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <h1 className='text-2xl'>Add Product</h1>
+            <h1 className='text-2xl ml-6 text-[#d01818]'>Product Add</h1>
             <div>
 
-                <div className='w-96 p-7'>
+                <div className=' p-7'>
                     <form onSubmit={handleSubmit(handleAddProduct)}>
 
 
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"><span className="label-text">Product Name</span></label>
-                            <input placeholder='Product Name' type="text" required {...register("title", { required: 'Name is Required' })} className="input input-bordered w-full max-w-xs" />
-                            {errors.title && <p role="alert" className='text-red-500'>{errors.title?.message}</p>}
-                        </div>
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"><span className="label-text">Photo</span></label>
-                            <input type="file" required {...register("image", { required: 'Name is Required' })} className="input input-bordered w-full max-w-xs" />
-                            {errors.image && <p role="alert" className='text-red-500'>{errors.image?.message}</p>}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="form-control w-full">
+                                <label className="label "><span className="label-text ">Product Name</span></label>
+                                <input placeholder='Product Name' type="text" required {...register("title", { required: 'Name is Required' })} className="bg-gray-200 bg-gray-200 input input-bordered w-full" />
+                                {errors.title && <p role="alert" className='text-red-500'>{errors.title?.message}</p>}
+                            </div>
+                            <div className="form-control w-full">
+                                <label className="label"><span className="label-text">Saller Name</span></label>
+                                <input placeholder='Enter Your Name' defaultValue={user?.displayName} readOnly required type="text" {...register("name", { required: 'Name is Required' })} className="bg-gray-200 input input-bordered w-full" />
+                                {errors.name && <p role="alert" className='text-red-500'>{errors.name?.message}</p>}
+                            </div>
                         </div>
 
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"><span className="label-text">Saller Name</span></label>
-                            <input placeholder='Enter Your Name' defaultValue={user?.displayName} readOnly required type="text" {...register("name", { required: 'Name is Required' })} className="input input-bordered w-full max-w-xs" />
-                            {errors.name && <p role="alert" className='text-red-500'>{errors.name?.message}</p>}
-                        </div>
-                        <div className='flex'>
-                            <div className="form-control w-full max-w-xs mr-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="form-control w-full">
                                 <label className="label"><span className="label-text">Location</span></label>
-                                <input placeholder='Location' type="text" required {...register("location", { required: 'Location is Required' })} className="input input-bordered w-full max-w-xs" />
+                                <input placeholder='Location' type="text" required {...register("location", { required: 'Location is Required' })} className="bg-gray-200 input input-bordered w-full" />
                                 {errors.location && <p role="alert" className='text-red-500'>{errors.location?.message}</p>}
                             </div>
-
-                            <div className="form-control w-full max-w-xs">
+                            <div className="form-control w-full">
                                 <label className="label"><span className="label-text">Brand Name</span></label>
-                                <select {...register("brand")} required className="select input-bordered w-full max-w-xs">
+                                <select {...register("brand")} required className="select bg-gray-200 input-bordered w-full">
                                     <option disabled selected>Select Your Mobile Brand</option>
                                     {
                                         categories?.map(categorie => <option key={categorie._id} value={categorie.brand}>{categorie.brand}</option>)
                                     }
                                 </select>
                             </div>
-
                         </div>
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"><span className="label-text">Mobile Number</span></label>
-                            <input placeholder='Enter Your Mobile Number' required type="text" {...register("phone", { required: 'Phone is Required' })} className="input input-bordered w-full max-w-xs" />
-                            {errors.phone && <p role="alert" className='text-red-500'>{errors.phone?.message}</p>}
-                        </div>
-
-                        <div className='flex'>
-                            <div className="form-control w-full max-w-xs mr-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="form-control w-full">
+                                <label className="label"><span className="label-text">Mobile Number</span></label>
+                                <input placeholder='Enter Your Mobile Number' required type="text" {...register("phone", { required: 'Phone is Required' })} className="bg-gray-200 input input-bordered w-full" />
+                                {errors.phone && <p role="alert" className='text-red-500'>{errors.phone?.message}</p>}
+                            </div>
+                            <div className="form-control w-full">
                                 <label className="label"><span className="label-text">Original Price</span></label>
-                                <input placeholder='Original Price' type="text" required {...register("original", { required: 'Name is Required' })} className="input input-bordered w-full max-w-xs" />
+                                <input placeholder='Original Price' type="text" required {...register("original", { required: 'Name is Required' })} className="bg-gray-200 input input-bordered w-full" />
                                 {errors.original && <p role="alert" className='text-red-500'>{errors.original?.message}</p>}
                             </div>
-                            <div className="form-control w-full max-w-xs">
-                                <label className="label"><span className="label-text">Resale Price</span></label>
-                                <input placeholder='Resale Price' type="text" required {...register("resale", { required: 'Name is Required' })} className="input input-bordered w-full max-w-xs" />
-                                {errors.resale && <p role="alert" className='text-red-500'>{errors.resale?.message}</p>}
-                            </div>
                         </div>
 
 
-                        <input className='w-full btn btn-secondary mt-5' value='Add Product' type="submit" />
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                            <div className="form-control w-full">
+                                <label className="label"><span className="label-text">Resale Price</span></label>
+                                <input placeholder='Resale Price' type="text" required {...register("resale", { required: 'Name is Required' })} className="bg-gray-200 input input-bordered w-full" />
+                                {errors.resale && <p role="alert" className='text-red-500'>{errors.resale?.message}</p>}
+                            </div>
+
+                        </div>
+
+
+                        <div className="flex items-center justify-center w-full mt-5">
+                            <label for="dropzone-file" className="bg-gray-200 flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600" >
+                                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <svg aria-hidden="true" className="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                </div>
+                                <input id="dropzone-file" type="file" required {...register("image", { required: 'Name is Required' })} className="hidden" />
+                                {errors.image && <p role="alert" className='text-red-500'>{errors.image?.message}</p>}
+                            </label>
+                        </div>
+
+
+
+                        <input className='w-36 bg-[#d01818] px-6 py-2 text-white mt-5' value='Add Product' type="submit" />
                     </form>
 
                 </div>
             </div>
+
         </div>
     );
 };

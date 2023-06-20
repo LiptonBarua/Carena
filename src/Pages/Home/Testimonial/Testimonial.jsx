@@ -22,7 +22,7 @@ const Testimonial = () => {
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:-mb-28'>
                    {
-                    testimonails?.map((testimonail, i)=> <div className="hover:bg-[#d01818] hover:text-white bg-white text-black px-10 mt-16 md:mt-0 w-full shadow-lg" style={{transition: `2s`}}>
+                    testimonails?.map((testimonail, i)=> <div key={i} className="hover:bg-[#d01818] hover:text-white bg-white text-black px-10 mt-16 md:mt-0 w-full shadow-lg" style={{transition: `2s`}}>
 
                     <img alt="Kyle-katarn" src={testimonail?.img} className="h-24 w-24 -mt-10" />
                     <div className="mt-6 pb-5">

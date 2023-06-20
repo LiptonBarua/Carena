@@ -1,9 +1,10 @@
 
 import toast from 'react-hot-toast';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useContext } from 'react';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
-const CategoryModel = ({productsName}) => {
+const AdverticeModel = ({ productsName}) => {
+    console.log(productsName)
    
     const { user } = useContext(AuthContext);
     const{title, resale} =productsName;
@@ -72,6 +73,6 @@ const CategoryModel = ({productsName}) => {
     );
 };
 
-export default CategoryModel;
+export default AdverticeModel;
 
  

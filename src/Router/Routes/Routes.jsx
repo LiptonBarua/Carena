@@ -14,6 +14,7 @@ import AdminRouter from "../AdminRouter/AdminRouter";
 import AllUser from "../../Dashboard/AllUser/AllUser";
 import AddProduct from "../../Dashboard/AddProduct/AddProduct";
 import BookingCollection from "../../Dashboard/BookingCollection/BookingCollection";
+import MyProducts from "../../Dashboard/MyProducts/MyProducts";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
                 path: '/category/:brand',
 
                 element: <Categorys></Categorys>,
-                loader: ({ params }) => fetch(`https://server12.vercel.app/product/${params.brand}`)
+                loader: ({ params }) => fetch(` https://resele-server-side.vercel.app/product/${params.brand}`)
             },
             {
                 path: '/blog', element: <Blog></Blog>
@@ -47,19 +48,19 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard', element: <PrivateRouter><BookingCollection></BookingCollection></PrivateRouter>
             },
-            // {
-            //     path: '/dashboard/myProducts', element: <SellerRouter><MyProducts></MyProducts></SellerRouter>
-            //  },
+            {
+                path: '/dashboard/myProducts', element: <SellerRouter><MyProducts></MyProducts></SellerRouter>
+             },
             {
                 path: '/dashboard/addProduct', element: <SellerRouter><AddProduct></AddProduct></SellerRouter>
             },
             {
-                path: '/dashboard/allSeller', index:true, element: <PrivateRouter><AdminRouter><AllUser></AllUser></AdminRouter></PrivateRouter>
+                path: '/dashboard/allUser', index:true, element: <PrivateRouter><AdminRouter><AllUser></AllUser></AdminRouter></PrivateRouter>
             },
             {
                 path: '/dashboard/payments/:id', 
                 element: <Payment></Payment>,
-                loader: ({params})=>fetch(`https://server12.vercel.app/booking/${params.id}`)
+                loader: ({params})=>fetch(` https://resele-server-side.vercel.app/booking/${params.id}`)
             }
         ]
     }

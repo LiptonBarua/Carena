@@ -65,7 +65,7 @@ const SignUp = () => {
 
         const users = { name, email,role}
     
-        fetch('https://server12.vercel.app/users', {
+        fetch(' https://resele-server-side.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -1,19 +1,21 @@
 
 import { useEffect, useState } from 'react';
 import Advertices from './Advertices';
+import AdverticeModel from './AdverticeModel';
 
 const Advertice = () => {
   const[limit, setLimit] = useState(3)
   
     const[advertices, setAdvertice]=useState([])
     const slice= advertices.slice(0, limit)
-
+ 
+    const [productsName, setProductsName] = useState('')
   
     const loadMore=()=> {
       setLimit(limit+limit)
    }
     useEffect(()=>{
-      fetch(`https://server12.vercel.app/products?advertice=true`)
+      fetch(` https://resele-server-side.vercel.app/products?advertice=true`)
       .then(res=>res.json())
       .then(data=>{
       
@@ -33,11 +35,12 @@ const Advertice = () => {
            </div>
             <div className='px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
               {
-               slice.map(advertice=><Advertices key={advertice._id} advertice={advertice} ></Advertices>)
+               slice.map(advertice=><Advertices key={advertice._id} advertice={advertice} setProductsName={setProductsName}></Advertices>)
               }
         </div>
-        <div className='text-center mt-8'>
-        </div>
+        <div>
+        <AdverticeModel key={slice._id} slice={slice} productsName={productsName} ></AdverticeModel>
+       </div>
         </div>
     );
 };

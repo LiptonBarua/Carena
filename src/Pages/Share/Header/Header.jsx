@@ -7,7 +7,7 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import { HiMenu } from 'react-icons/hi';
 
-const Navber = () => {
+const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email);
   const [isSeller] = useSaller(user?.email);
@@ -41,7 +41,7 @@ const Navber = () => {
     <div className="navbar fixed top-0 py-5 z-50 md:px-12 bg-white">
       <div className="navbar-start">
          <label  htmlFor="my-drawer-2" tabIndex={2} className="text-black lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </label>
         <Link to='/' className='font-bold text-xl md:text-3xl italic text-orange-500'>
           <img src='https://carena.bolvo.com/wp-content/uploads/2019/05/logo.jpg' alt="" className='w-28 lg:w-36' />
@@ -82,4 +82,4 @@ const Navber = () => {
   );
 };
 
-export default Navber;
+export default Header;
