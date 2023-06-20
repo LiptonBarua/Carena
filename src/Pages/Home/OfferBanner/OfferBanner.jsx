@@ -1,5 +1,5 @@
 import React from 'react';
-import {HiOutlineFilm, HiOutlineNewspaper} from "react-icons/hi";
+import {HiOutlineFilm, HiOutlineMinus, HiOutlineNewspaper} from "react-icons/hi";
 import {MdEmojiTransportation} from "react-icons/md";
 import {GiDrill} from "react-icons/gi";
 
@@ -31,18 +31,17 @@ const OfferBanner = () => {
 			<h3 className="text-2xl font-semibold">Balancing</h3>
 			<div className="mt-6 leading-tight">
 				<p className='text-justify'>MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.</p>
-
 			</div>
-			<h1 className="hidden font-bold h-px w-4 bg-[#d01818] sm:inline-block"></h1>
+			<h1 className=" text-4xl text-[#d01818]"><HiOutlineMinus></HiOutlineMinus></h1>
 		</div>
-        <div className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#d01818] hover:text-white hover:bg-[#d01818] hover:text-white" style={{transition: `1s`}}>
+        <div className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#d01818] hover:bg-[#d01818] hover:text-white" style={{transition: `1s`}}>
 		<h1 className='text-6xl'><MdEmojiTransportation></MdEmojiTransportation></h1>
 			<h3 className="mt-5 text-xl font-semibold">Transmission</h3>
 			<h3 className="text-2xl font-semibold">Installation</h3>
 			<div className="mt-6 leading-tight">
 				<p className='text-justify'>MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.</p>
-
 			</div>
+			<h1 className=" text-4xl text-[#d01818]"><HiOutlineMinus></HiOutlineMinus></h1>
 		</div>
         <div className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#d01818] hover:text-white" style={{transition: `1s`}}>
 		<h1 className='text-6xl'><GiDrill></GiDrill></h1>
@@ -50,8 +49,8 @@ const OfferBanner = () => {
 			<h3 className="text-2xl font-semibold">Painting</h3>
 			<div className="mt-6 leading-tight">
 				<p className='text-justify'>MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.</p>
-
 			</div>
+			<h1 className=" text-4xl text-[#d01818]"><HiOutlineMinus></HiOutlineMinus></h1>
 		</div>
 		<div className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#d01818] hover:text-white" style={{transition: `1s`}}>
 		<h1 className='text-6xl'><HiOutlineNewspaper></HiOutlineNewspaper></h1>
@@ -59,8 +58,8 @@ const OfferBanner = () => {
 			<h3 className="text-2xl font-semibold">Inspection</h3>
 			<div className="mt-6 leading-tight">
 				<p className='text-justify'>MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.</p>
-
 			</div>
+			<h1 className=" text-4xl text-[#d01818]"><HiOutlineMinus></HiOutlineMinus></h1>
 		</div>
 
 	

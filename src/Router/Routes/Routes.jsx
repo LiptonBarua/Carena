@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             {
                 path: '/category/:brand',
 
-                element: <Categorys></Categorys>,
+                element: <PrivateRouter><Categorys></Categorys></PrivateRouter>,
                 loader: ({ params }) => fetch(` https://resele-server-side.vercel.app/product/${params.brand}`)
             },
             {
