@@ -1,4 +1,5 @@
 import React from 'react';
+import { HiOutlineMinus } from 'react-icons/hi';
 
 const Testimonial = () => {
     const testimonails = [
@@ -22,13 +23,13 @@ const Testimonial = () => {
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:-mb-28'>
                    {
-                    testimonails?.map((testimonail, i)=> <div key={i} className="hover:bg-[#d01818] hover:text-white bg-white text-black px-10 mt-16 md:mt-0 w-full shadow-lg" style={{transition: `2s`}}>
+                    testimonails?.map((testimonail, i)=> <div key={i} className="hover:bg-[#0a8803] hover:text-white bg-white text-black px-10 mt-16 md:mt-0 w-full shadow-lg" style={{transition: `2s`}}>
 
-                    <img alt="Kyle-katarn" src={testimonail?.img} className="h-24 w-24 -mt-10" />
+                    <img alt="Kyle-katarn" src={testimonail?.img} className="h-20 w-20 -mt-10" />
                     <div className="mt-6 pb-5">
 
                         <div className='flex items-center'>
-                            <hr className='w-3 mr-1'></hr>
+                        <h1 className=" text-lg"><HiOutlineMinus></HiOutlineMinus></h1>
                             <p className="font-semibold">{testimonail?.name}</p>
                         </div>
                         <p>{testimonail?.position}</p>

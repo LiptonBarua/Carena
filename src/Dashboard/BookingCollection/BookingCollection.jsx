@@ -32,14 +32,14 @@ const Bookings = () => {
     <>
       {
         isBuyer && <div>
-          <h1 className='text-2xl mb-8 ml-5 text-[#d01818]'>Booking: {bookings.length}</h1>
+          <h1 className='text-2xl mb-8 ml-5 text-[#0a8803]'>Booking: {bookings.length}</h1>
           <div>
 
             <div className="overflow-x-auto hidden lg:block">
               <table className="table table-zebra w-full">
 
                 <thead>
-                  <tr className='bg-[#d01818] text-white'>
+                  <tr className='bg-[#0a8803] text-white'>
                     <th>SL.No</th>
                     <th>Name</th>
                     <th>Product</th>
@@ -81,7 +81,7 @@ const Bookings = () => {
 
                   <tbody>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#d01818] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
                         SL.No
                       </th>
                       <td className="px-6 py-4">
@@ -90,7 +90,7 @@ const Bookings = () => {
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#d01818] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
                         Name
                       </th>
                       <td className="px-6 py-4">
@@ -98,7 +98,7 @@ const Bookings = () => {
                       </td>
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#d01818] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
                       Product
                       </th>
                       <td className="px-6 py-4">
@@ -107,20 +107,20 @@ const Bookings = () => {
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#d01818] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
                         Price
                       </th>
                       <td className="px-6 py-4">{booking.price}</td>
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#d01818] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
                        Location
                       </th>
                       <td className="px-6 py-4">{booking.location}</td>
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#d01818] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
                         Payment
                       </th>
                       <td className="px-6 py-4">

@@ -16,7 +16,7 @@ const Subscribe = () => {
                             </div>
                             <input className='md:ml-2 ml-0 md:w-96 py-4 px-8 ' placeholder="Email Address" type="email" name="" id="" />
                             {/* <input type="email" name="email" placeholder="Email Address" className="input md:w-80  dark:text-black" /> */}
-                            <button className=" text-black font-bold py-4 px-6 bg-[#de5510]">Subscribe</button>
+                            <button className="text-white font-bold py-4 px-6 bg-[#0a8803]">Subscribe</button>
 
                         </div>
                     </div>

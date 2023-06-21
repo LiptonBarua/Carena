@@ -15,6 +15,7 @@ import AllUser from "../../Dashboard/AllUser/AllUser";
 import AddProduct from "../../Dashboard/AddProduct/AddProduct";
 import BookingCollection from "../../Dashboard/BookingCollection/BookingCollection";
 import MyProducts from "../../Dashboard/MyProducts/MyProducts";
+import MyProfile from "../../Dashboard/MyProfile/MyProfile";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +48,9 @@ const router = createBrowserRouter([
         element: <DashboardLayout></DashboardLayout>, children: [
             {
                 path: '/dashboard', element: <PrivateRouter><BookingCollection></BookingCollection></PrivateRouter>
+            },
+            {
+                path: '/dashboard/myProfile', element: <PrivateRouter><MyProfile></MyProfile></PrivateRouter>
             },
             {
                 path: '/dashboard/myProducts', element: <SellerRouter><MyProducts></MyProducts></SellerRouter>

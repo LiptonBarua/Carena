@@ -39,7 +39,7 @@ const Category = ({products, setProductsName}) => {
   />
 
   <div className=' flex justify-end -mt-10'>
-    <button className='bg-[#d01818] text-white hover:bg-black font-bold  px-5 py-2'>
+    <button className='bg-[#0a8803] text-white hover:bg-black font-bold  px-5 py-2'>
       <div className='flex items-center'>
         <del className='text-sm mr-1'>{original}</del>
         <h1 className='text-md'>{resale}</h1>
@@ -68,7 +68,7 @@ const Category = ({products, setProductsName}) => {
     <p>Phone: {phone}</p>
     <div>
       {
-        isBuyer && <div><label onClick={()=>setProductsName(products)} htmlFor="product-modal" className=" mb-3 mt-6 btn btn-sm w-full text-white hover:text-black bg-[#d01818]">Book Now</label></div>
+        isBuyer && <div><label onClick={()=>setProductsName(products)} htmlFor="product-modal" className=" mb-3 mt-6 btn btn-sm w-full text-white hover:text-black bg-[#0a8803]">Book Now</label></div>
 
       }
 </div>

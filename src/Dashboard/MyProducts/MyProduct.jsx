@@ -32,7 +32,7 @@ useEffect(() => {
               />
             
               <div className=' flex justify-end -mt-12'>
-                <button className='bg-[#d01818] text-white hover:bg-black font-bold  px-6 py-3'>
+                <button className='bg-[#0a8803] text-white hover:bg-black font-bold  px-6 py-3'>
                   <div className='flex items-center'>
                     <del className='text-sm mr-1'>{original}</del>
                     <h1 className='text-md'>{resale}</h1>
@@ -62,7 +62,7 @@ useEffect(() => {
                 <div>
                 <div className='flex justify-between mt-4'>
                 <button onClick={()=>handleAdvertice(_id)} className="">Advertise</button>
-               <button onClick={()=>handleDeleteProduct(_id)} className="text-3xl text-[#d01818]"><HiOutlineTrash></HiOutlineTrash></button>
+               <button onClick={()=>handleDeleteProduct(_id)} className="text-3xl text-[#0a8803]"><HiOutlineTrash></HiOutlineTrash></button>
                </div>
                 </div>
               </div>

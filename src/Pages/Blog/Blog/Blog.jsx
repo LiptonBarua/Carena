@@ -46,12 +46,12 @@ const Blog = () => {
               {
                 blogQustion?.map((blog, i)=> <div key={blog.id}>
                     <a
-                            className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-[#d01818]/10 hover:shadow-[#d01818]/10"
+                            className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-[#0a8803]/10 hover:shadow-[#0a8803]/10"
                             href="/services/digital-campaigns"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-10 w-10 text-[#d01818]"
+                                className="h-10 w-10 text-[#0a8803]"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -80,7 +80,7 @@ const Blog = () => {
                     </div>
 
                     <div className="mt-12 text-center">
-                        <Link to='/'><button className="inline-block rounded bg-[#d01818] px-12 py-3 text-sm font-medium text-white transition hover:bg-[#d01818] focus:outline-none focus:ring focus:ring-yellow-400">Get Started Today</button></Link>
+                        <Link to='/'><button className="text-[white] border border-[#0a8803] hover:bg-[black] hover:border-white  active:bg-[#0a8803] bg-[#0a8803] text-lg px-12 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Get Started Today</button></Link>
                     </div>
                 </div>
             </section>

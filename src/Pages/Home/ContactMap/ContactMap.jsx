@@ -50,7 +50,7 @@ const ContactMap = () => {
                         </div>
 
                         <div className="mt-4 ms-auto">
-                            <button type="submit" className="inline-block w-full bg-[#d01818] text-white  hover:bg-white hover:text-black px-8 py-3 font-medium text-black uppercase hover:text-white sm:w-auto" style={{ transitionDuration: `2s` }}>Send Message</button>
+                            <button type="submit" className="inline-block w-full bg-[#0a8803] text-white  hover:bg-white hover:text-black px-8 py-3 font-medium text-black uppercase hover:text-white sm:w-auto" style={{ transitionDuration: `2s` }}>Send Message</button>
                         </div>
                     </form>
 

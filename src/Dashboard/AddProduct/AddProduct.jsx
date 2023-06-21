@@ -3,13 +3,17 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { ShareContext } from "../../ShareProvider/ShareProvider";
 
 
 const AddProduct = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
+    const { profile } = useContext(ShareContext)
+
+    console.log(profile)
     const date = new Date();
     const year = new Date();
 
@@ -43,7 +47,8 @@ const AddProduct = () => {
                     const product = {
                         // sellerName: user?.displayName,
                         email: user?.email,
-                        name: data?.name,
+                        firstName: data?.firstName,
+                        lastName: data?.lastName,
                         title: data?.title,
                         location: data?.location,
                         original: parseFloat(data?.original),
@@ -52,7 +57,6 @@ const AddProduct = () => {
                         image: imageData.data.url,
                         brand: data?.brand,
                         phone: data?.phone,
-                        // year: data?.year,
                         year,
                         date
                     }
@@ -77,7 +81,7 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <h1 className='text-2xl ml-6 text-[#d01818]'>Product Add</h1>
+            <h1 className='text-2xl ml-6 text-[#0a8803]'>Product Add</h1>
             <div>
 
                 <div className=' p-7'>
@@ -86,22 +90,24 @@ const AddProduct = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="form-control w-full">
-                                <label className="label "><span className="label-text ">Product Name</span></label>
-                                <input placeholder='Product Name' type="text" required {...register("title", { required: 'Name is Required' })} className="bg-gray-200 bg-gray-200 input input-bordered w-full" />
-                                {errors.title && <p role="alert" className='text-red-500'>{errors.title?.message}</p>}
-                            </div>
-                            <div className="form-control w-full">
-                                <label className="label"><span className="label-text">Saller Name</span></label>
-                                <input placeholder='Enter Your Name' defaultValue={user?.displayName} readOnly required type="text" {...register("name", { required: 'Name is Required' })} className="bg-gray-200 input input-bordered w-full" />
+                                <label className="label"><span className="label-text">First Name</span></label>
+                                <input placeholder='Enter Your First Name' defaultValue={profile[0]?.firstName} readOnly type="text" {...register("firstName", { required: 'Name is Required' })} className="bg-gray-200 input input-bordered w-full" />
                                 {errors.name && <p role="alert" className='text-red-500'>{errors.name?.message}</p>}
                             </div>
+
+                            <div className="form-control w-full">
+                                <label className="label "><span className="label-text ">Last Name</span></label>
+                                <input placeholder='Enter Your Last Name' defaultValue={profile[0]?.lastName} readOnly type="text" required {...register("lastName", { required: 'Name is Required' })} className="bg-gray-200 bg-gray-200 input input-bordered w-full" />
+                                {errors.title && <p role="alert" className='text-red-500'>{errors.title?.message}</p>}
+                            </div>
+
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="form-control w-full">
-                                <label className="label"><span className="label-text">Location</span></label>
-                                <input placeholder='Location' type="text" required {...register("location", { required: 'Location is Required' })} className="bg-gray-200 input input-bordered w-full" />
-                                {errors.location && <p role="alert" className='text-red-500'>{errors.location?.message}</p>}
+                        <div className="form-control w-full">
+                                <label className="label "><span className="label-text ">Product Name</span></label>
+                                <input placeholder='Product Name' type="text" required {...register("title", { required: 'Name is Required' })} className="bg-gray-200 bg-gray-200 input input-bordered w-full" />
+                                {errors.title && <p role="alert" className='text-red-500'>{errors.title?.message}</p>}
                             </div>
                             <div className="form-control w-full">
                                 <label className="label"><span className="label-text">Brand Name</span></label>
@@ -115,20 +121,26 @@ const AddProduct = () => {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="form-control w-full">
+                                <label className="label"><span className="label-text">Location</span></label>
+                                <input placeholder='Location' type="text" required {...register("location", { required: 'Location is Required' })} className="bg-gray-200 input input-bordered w-full" />
+                                {errors.location && <p role="alert" className='text-red-500'>{errors.location?.message}</p>}
+                            </div>
+                            <div className="form-control w-full">
                                 <label className="label"><span className="label-text">Mobile Number</span></label>
                                 <input placeholder='Enter Your Mobile Number' required type="text" {...register("phone", { required: 'Phone is Required' })} className="bg-gray-200 input input-bordered w-full" />
                                 {errors.phone && <p role="alert" className='text-red-500'>{errors.phone?.message}</p>}
                             </div>
-                            <div className="form-control w-full">
-                                <label className="label"><span className="label-text">Original Price</span></label>
-                                <input placeholder='Original Price' type="text" required {...register("original", { required: 'Name is Required' })} className="bg-gray-200 input input-bordered w-full" />
-                                {errors.original && <p role="alert" className='text-red-500'>{errors.original?.message}</p>}
-                            </div>
+
                         </div>
 
 
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="form-control w-full">
+                                <label className="label"><span className="label-text">Original Price</span></label>
+                                <input placeholder='Original Price' type="text" required {...register("original", { required: 'Name is Required' })} className="bg-gray-200 input input-bordered w-full" />
+                                {errors.original && <p role="alert" className='text-red-500'>{errors.original?.message}</p>}
+                            </div>
 
                             <div className="form-control w-full">
                                 <label className="label"><span className="label-text">Resale Price</span></label>
@@ -153,7 +165,7 @@ const AddProduct = () => {
 
 
 
-                        <input className='w-36 bg-[#d01818] px-6 py-2 text-white mt-5' value='Add Product' type="submit" />
+                        <input className='w-36 bg-[#0a8803] px-6 py-2 text-white mt-5' value='Add Product' type="submit" />
                     </form>
 
                 </div>

@@ -4,13 +4,16 @@ import App from './App.jsx'
 import './index.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import AuthProvider from './AuthProvider/AuthProvider.jsx'
+import ShareProvider from './ShareProvider/ShareProvider.jsx'
 
 const queryClient = new QueryClient()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   <QueryClientProvider client={queryClient}>
  <AuthProvider>
- <App />
+<ShareProvider>
+<App />
+</ShareProvider>
  </AuthProvider>
   </QueryClientProvider>
   </React.StrictMode>,
