@@ -39,7 +39,7 @@ const SignUp = () => {
         const image=data.image[0];
         const formData=new FormData();
         formData.append('image', image)
-        const uri = `https://api.imgbb.com/1/upload?key=d0ee0f160648d3906c64599f51fb220b`
+        const uri = `https://api.imgbb.com/1/upload?key=33de90de0d198f3c751547fa3dc96a5e`
        fetch(uri, {
         method: "POST",
         body: formData
@@ -55,9 +55,9 @@ const SignUp = () => {
                 const userInfo = {
                     displayName: data.firstName,
                     displayLast: data.lastName,
-                    image: imageData.data.uri,
                     email: data.email,
-                    role: data.role
+                    role: data.role,
+                    image: imageData.data.uri,
                 }
 
                 updateUser(userInfo)

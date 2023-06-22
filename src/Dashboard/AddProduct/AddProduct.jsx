@@ -35,7 +35,7 @@ const AddProduct = () => {
 
         const formData = new FormData();
         formData.append('image', image);
-        const uri = `https://api.imgbb.com/1/upload?key=d0ee0f160648d3906c64599f51fb220b`
+        const uri = `https://api.imgbb.com/1/upload?key=33de90de0d198f3c751547fa3dc96a5e`
         fetch(uri, {
             method: 'POST',
             body: formData
@@ -72,6 +72,7 @@ const AddProduct = () => {
                         .then(data => {
                             toast.success('Product Add is my Successfully');
                             reset()
+                            
                         })
                         .catch(error => {
                             toast.error(error.message)

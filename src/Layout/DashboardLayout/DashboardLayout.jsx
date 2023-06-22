@@ -47,7 +47,7 @@ const DashboardLayout = () => {
           <div className="drawer-side">
             <label htmlFor="my-drawer-2" className=""></label>
             
-            <ul className="bg-[#0a8803] text-white text-lg ont menu pt-28 w-52 lg:w-72 h-full">
+            <ul className="bg-[#0a8803] text-white text-lg ont menu pt-28 w-52 lg:w-80 h-full">
             <div className="flex flex-col justify-center pb-6 max-w-xs rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100">
               {
                 profile[0]?.image? <img src={profile[0]?.image} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" /> : <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />

@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { createContext, useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { createContext, useContext } from 'react';
 
 
 export const ShareContext=createContext()
 const ShareProvider = ({children}) => {
 const {user}=useContext(AuthContext)
 
-    const {data: profile=[], refetch}=useQuery({
+    const {data: profile=[], refetch:profileRefetch}=useQuery({
         queryKey: ['profileData'],
         queryFn: async()=>{
             const res= await fetch(`https://resele-server-side.vercel.app/profile?email=${user?.email}`)
@@ -15,7 +15,7 @@ const {user}=useContext(AuthContext)
             return data
         }
     })
-    const shareInfo={profile}
+    const shareInfo={profile, profileRefetch}
     return (
        <ShareContext.Provider value={shareInfo}>
         {children}

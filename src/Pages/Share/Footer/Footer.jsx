@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3  lg:px-8">
           <div>
           <h2 className="relative text-2xl font-bold flex items-center">
-              <img src='https://i.ibb.co/MV0Sz02/logo-removebg-preview-1.png' alt="" className='z-10' />
+              <img src='https://i.ibb.co/1TSkWw9/logo-removebg-preview-1.png' alt="" className='z-10' />
              <div className='absolute mb-2 ml-[41px]'>
              <span className=' text-3xl text-[#f1f5f1]'>Carena</span>
              
