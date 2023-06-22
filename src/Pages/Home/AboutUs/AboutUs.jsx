@@ -27,7 +27,7 @@ const AboutUs = () => {
 						<div aria-hidden="true" className="mt-10 lg:mt-0">
 							<div className='flex'>
 								<div className='hidden lg:block'>
-									<img className='w-[650px] h-[700px] -mt-20' src="https://carena.bolvo.com/wp-content/uploads/2017/12/bg-2.png" alt="" />
+									<img className='w-[650px] h-[700px] -mt-20' src="https://i.ibb.co/Z1hRSqB/bg-2.png" alt="" />
 								</div>
 								<div>
 									<div className="flex items-center space-x-2 sm:space-x-4 mb-10">
