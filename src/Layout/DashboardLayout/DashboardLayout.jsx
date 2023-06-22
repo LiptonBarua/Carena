@@ -22,6 +22,7 @@ const DashboardLayout = () => {
   const [isAdmin] = useAdmin(user?.email);
   const [isSeller] = useSaller(user?.email);
   const [isBuyer] = useBuyer(user?.email);
+  const{profile}=useContext(ShareContext)
 
 
   // const { data: sellectData = [] } = useQuery({
@@ -40,15 +41,28 @@ const DashboardLayout = () => {
 
         <div className="drawer lg:drawer-open">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content my-24">
+          <div className="drawer-content py-24">
             <Outlet></Outlet>
           </div>
           <div className="drawer-side">
             <label htmlFor="my-drawer-2" className=""></label>
-            <ul className="bg-[#0a8803] text-white text-lg ont menu pt-24 lg:pt-28 w-44 lg:w-72 h-full text-base-content">
-            <li className=''><Link to='/dashboard/myProfile'><CgProfile></CgProfile >My Profile</Link></li>
+            
+            <ul className="bg-[#0a8803] text-white text-lg ont menu pt-28 w-52 lg:w-72 h-full">
+            <div className="flex flex-col justify-center pb-6 max-w-xs rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100">
+              {
+                profile[0]?.image? <img src={profile[0]?.image} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" /> : <img src="https://source.unsplash.com/150x150/?portrait?3" alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+
+              }
+              <div className="space-y-4 text-center divide-y divide-gray-700">
+                <div className="my-2">
+                  <h2 className="text-xl font-semibold sm:text-2xl">{profile[0]?.firstName} {profile[0]?.lastName}</h2>
+                </div>
+
+              </div>
+            </div>
+            <hr></hr>
                 {
-                  isBuyer && (<Link to='/dashboard'><FaBorderStyle></FaBorderStyle> My Orders</Link>
+                  isBuyer && (<li><Link to='/dashboard'><FaBorderStyle></FaBorderStyle> My Orders</Link></li>
                   )}
                 {
                   isAdmin && <li><Link to='/dashboard/allUser'><FiUsers></FiUsers> All Users</Link></li>}

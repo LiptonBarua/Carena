@@ -73,7 +73,7 @@ const AllUser = () => {
   }
   return (
     <div className=''>
-      <h1 className='text-2xl mb-10 ml-5 text-[#0a8803]'>All User : {users?.length}</h1>
+      <h1 className='text-2xl lg:mb-10 ml-5 text-[#0a8803]'>All User : {users?.length}</h1>
       <div className='hidden lg:block'>
         <div className="overflow-x-auto ">
 
@@ -99,7 +99,7 @@ const AllUser = () => {
                   <td>{user.email}</td>
                   <td>{user.role === 'admin' ? user.role : user.role}</td>
                   <td>{user?.role === "Seller" && user?.isVerified !== 'verified' && user?.role !== "admin" && <button onClick={() => handleMakeVerify(user._id)} className='btn btn-xs btn-primary'>Make Verify</button>}</td>
-                  <td>{user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='bg-[#0a8803] text-white rounded-md py-1 px-1'>Make Admin</button>}</td>
+                  <td>{user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='bg-[#0a8803] text-white rounded-md py-1 px-2'>Make Admin</button>}</td>
                   <td ><button onClick={() => handleDeleteUsers(user)}><HiTrash className='text-2xl text-[#0a8803]'></HiTrash></button></td>
                 </tr>)
               }
@@ -120,7 +120,7 @@ const AllUser = () => {
 
               <tbody>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium  text-white bg-[#0a8803] w-36 whitespace-nowrap">
                     SL.No
                   </th>
                   <td className="px-6 py-4">
@@ -129,7 +129,7 @@ const AllUser = () => {
 
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                     Name
                   </th>
                   <td className="px-6 py-4">
@@ -137,7 +137,7 @@ const AllUser = () => {
                   </td>
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                     Email
                   </th>
                   <td className="px-6 py-4">
@@ -146,7 +146,7 @@ const AllUser = () => {
 
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                     Role
                   </th>
                   <td className="px-6 py-4">
@@ -155,7 +155,7 @@ const AllUser = () => {
 
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                     Verified
                   </th>
                   <td className="px-6 py-4">
@@ -163,16 +163,16 @@ const AllUser = () => {
                   </td>
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                     Admin
                   </th>
                   <td className="px-6 py-4">
-                    {user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>}
+                    {user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='bg-[#0a8803] text-white rounded-md py-1 px-2'>Make Admin</button>}
                   </td>
 
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                     Delete
                   </th>
                   <td className="px-6 py-4">

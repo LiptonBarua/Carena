@@ -32,7 +32,7 @@ const Bookings = () => {
     <>
       {
         isBuyer && <div>
-          <h1 className='text-2xl mb-8 ml-5 text-[#0a8803]'>Booking: {bookings.length}</h1>
+          <h1 className='text-2xl lg:mb-8 ml-5 font-bold text-[#0a8803]'>Booking: {bookings.length}</h1>
           <div>
 
             <div className="overflow-x-auto hidden lg:block">
@@ -58,7 +58,7 @@ const Bookings = () => {
                       <td data-label='PRICE'>{booking.price}</td>
                       <td data-label='LOCATION'>{booking.location}</td>
                       <td data-label='PAYMENT'>{
-                        booking.price && !booking.paid && <Link to={`/dashboard/payments/${booking._id}`}><button className='btn btn-primary btn-sm'>Pay Now</button></Link>
+                        booking.price && !booking.paid && <Link to={`/dashboard/payments/${booking._id}`}><button className='bg-[#0a8803] text-white px-4 py-2'>Pay Now</button></Link>
                       }
                         {
                           booking.price && booking.paid && <span className='text-green-500'>Paid</span>
@@ -75,13 +75,13 @@ const Bookings = () => {
 
           <div className="relative overflow-x-auto lg:hidden">
             {
-              bookings?.map((booking, i) => <div key={i} className='ml-5'>
+              bookings?.map((booking, i) => <div key={i} className='ml-5 mt-8'>
                 <table className="w-full text-sm text-left">
 
 
                   <tbody>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                         SL.No
                       </th>
                       <td className="px-6 py-4">
@@ -90,7 +90,7 @@ const Bookings = () => {
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                         Name
                       </th>
                       <td className="px-6 py-4">
@@ -98,7 +98,7 @@ const Bookings = () => {
                       </td>
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                       Product
                       </th>
                       <td className="px-6 py-4">
@@ -107,25 +107,25 @@ const Bookings = () => {
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                         Price
                       </th>
                       <td className="px-6 py-4">{booking.price}</td>
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                        Location
                       </th>
                       <td className="px-6 py-4">{booking.location}</td>
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-black text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
                         Payment
                       </th>
                       <td className="px-6 py-4">
                         {
-                          booking.price && !booking.paid && <Link to={`/dashboard/payments/${booking._id}`}><button className='btn btn-primary btn-sm'>Pay Now</button></Link>
+                          booking.price && !booking.paid && <Link to={`/dashboard/payments/${booking._id}`}><button className='bg-[#0a8803] text-white px-4 py-2'>Pay Now</button></Link>
                         }
                         {
                           booking.price && booking.paid && <span className='text-green-500'>Paid</span>

@@ -10,7 +10,7 @@ const MyProfile = () => {
 
     }
     return (
-        <div>
+        <div className='py-24'>
         <div className="px-[20px] lg:px-0 h-auto lg:h-[550px] flex lg:justify-center">
             <div className="bg-white shadow-lg  lg:m-8 w-full lg:w-2/3 grid lg:flex lg:rounded-xl">
                 <div className="h-[450px] lg:h-auto lg:w-1/3 bg-[#0a8803] lg:rounded-l-lg">

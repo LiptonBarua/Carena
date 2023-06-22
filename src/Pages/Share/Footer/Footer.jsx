@@ -5,15 +5,18 @@ const Footer = () => {
     return (
       <footer aria-label="Site Footer"  style={{ backgroundImage: `url(https://i.ibb.co/BtCbpKq/car-nissan-race-cars-road-wallpaper-preview.jpg)`, backgroundSize: `cover`, backgroundRepeat: `no-repeat` }}>
       <div
-        className="bg-[#000000c2] bg-opacity-80 px-4 py-16 space-y-8 sm:px-6 lg:px-8"
+        className="bg-[#000000ae] bg-opacity-80 pt-16 space-y-8"
       >
         
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3  lg:px-8">
           <div>
-            <div className="">
-            <img src='https://i.ibb.co/6sKz15W/logo-removebg-preview.png' alt="" className='w-20 lg:w-36' />
-
-            </div>
+          <h2 className="relative text-2xl font-bold flex items-center">
+              <img src='https://i.ibb.co/MV0Sz02/logo-removebg-preview-1.png' alt="" className='z-10' />
+             <div className='absolute mb-2 ml-[41px]'>
+             <span className=' text-3xl text-[#f1f5f1]'>Carena</span>
+             
+             </div>
+							</h2>
     
             <p className="max-w-xs mt-4 text-white">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
@@ -268,8 +271,8 @@ const Footer = () => {
           </div>
         </div>
     
-        <p className="text-xs text-white">
-          &copy; 2022. Company Name. All rights reserved.
+        <p className="text-md py-6 text-white bg-[#00000088] bg-opacity-30 text-center">
+          &copy; 2023. Carena. All rights reserved.
         </p>
       </div>
     </footer>

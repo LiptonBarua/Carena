@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import { ShareContext } from '../../../ShareProvider/ShareProvider';
 import { useContext, useState } from 'react';
+import { HiMenu } from "react-icons/hi";
 
 
 const Header = () => {
@@ -20,7 +21,7 @@ const Header = () => {
   }
 
   const dropDownItems=<>
-      <li onClick={()=>setNavbar(!navbar)}><Link to='/dashboard/myProfile'>My Profile</Link></li>
+      <li onClick={()=>setNavbar(!navbar)}><Link to='/myProfile'>My Profile</Link></li>
       <button onClick={()=>{handleLogOut(); setNavbar(!navbar)}} className='bg-[#0a8803] px-6 py-3 uppercase text-white font-semibold'>Log Out</button>
   </>
   const manuItem = <>
@@ -82,40 +83,31 @@ const Header = () => {
     <nav className="fixed bg-white dark:bg-dark py-5 backdrop-filter backdrop-blur-xl shadow-md  z-50 w-full md:px-5 right-0 top-0">
 			<div className="justify-between px-4 mx-auto lg:items-center lg:flex">
 				<div>
-          
 					<div className="flex items-center justify-between  lg:block">
          <div className='flex'>
          <label  htmlFor="my-drawer-2" tabIndex={2} className="text-black lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </label>
 						<Link to="/">
-							<h2 className="text-2xl dark:text-white text-gray-600 font-bold flex items-center">
-              <img src='https://carena.bolvo.com/wp-content/uploads/2019/05/logo.jpg' alt="" className='w-28 lg:w-36' />
+							<h2 className="relative text-2xl font-bold flex items-center">
+              <img src='https://i.ibb.co/MV0Sz02/logo-removebg-preview-1.png' alt="" className='z-10' />
+             <div className='absolute mb-2 ml-[41px]'>
+             <span className=' text-3xl text-[#0a8803]'>Carena</span>
+             
+             </div>
 							</h2>
 						</Link>
          </div>
 						<div className="lg:hidden flex items-center gap-1 justify-center">
 							<button
-								className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+								className="p-2 text-gray-700 rounded-md outline-none"
 								onClick={() => setNavbar(!navbar)}>
 								{navbar ? (
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										className="w-6 h-6 dark:text-white"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										strokeWidth={2}>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M4 6h16M4 12h16M4 18h16"
-										/>
-									</svg>
+									<HiMenu className="w-8 h-8 text-3xl font-bold text-[#0a8803]"></HiMenu>
 								) : (
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										className="w-6 h-6 dark:text-white"
+										className="w-8 h-8 text-3xl font-bold text-[#0a8803]"
 										viewBox="0 0 20 20"
 										fill="currentColor">
 										<path
