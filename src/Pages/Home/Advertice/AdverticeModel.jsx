@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const AdverticeModel = ({ productsName}) => {
-    console.log(productsName)
+
    
     const { user } = useContext(AuthContext);
     const{title, resale} =productsName;

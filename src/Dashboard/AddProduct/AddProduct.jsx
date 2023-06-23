@@ -12,8 +12,6 @@ const AddProduct = () => {
 
     const { user } = useContext(AuthContext);
     const { profile } = useContext(ShareContext)
-
-    console.log(profile)
     const date = new Date();
     const year = new Date();
 

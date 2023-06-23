@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ShareContext } from '../../../ShareProvider/ShareProvider';
 
 const SellCar = () => {
+    const {colors}=useContext(ShareContext);
+    // console.log(colors[0].color)
     return (
         <div style={{backgroundImage: `url(https://c4.wallpaperflare.com/wallpaper/956/868/1012/car-nissan-race-cars-road-wallpaper-preview.jpg)`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`, backgroundPosition: `center`}}>
           <div className='bg-[#000000c2] bg-opacity-80'>
@@ -10,7 +13,7 @@ const SellCar = () => {
                 <div className='text-white ml-10'>
                     <h1 className='font-bold mb-3'>ARE YOU LOOKING FOR A CAR?</h1>
                     <p className='text-justify'>Search your car in our Inventory and request a quote on the vehicle of your choosing.</p>
-                    <button className="text-[white] border border-[#0a8803] hover:bg-[white] hover:border-white hover:text-black active:bg-[#0a8803] bg-[#0a8803] font-semibold text-sm mt-3 px-6 py-2 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Search</button>
+                    <button className="text-[white] border border-[#0a8803] hover:bg-[white] hover:border-white hover:text-black bg-[#0a8803] font-semibold text-sm mt-3 px-6 py-2 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" style={{color: ``}}>Search</button>
 
                 </div>
             </div>

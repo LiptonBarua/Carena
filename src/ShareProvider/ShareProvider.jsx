@@ -15,7 +15,20 @@ const {user}=useContext(AuthContext)
             return data
         }
     })
-    const shareInfo={profile, profileRefetch}
+
+
+    // ..............Color Data..................
+
+
+    const{data: colors=[], refetch}=useQuery({
+     queryKey: ['colorData', user?.email],
+     queryFn: async()=>{
+        const res= await fetch (`https://resele-server-side.vercel.app/color?email=${user?.email}`)
+        const data=await res.json();
+        return data;
+     }
+    })
+    const shareInfo={profile, profileRefetch, colors, refetch}
     return (
        <ShareContext.Provider value={shareInfo}>
         {children}

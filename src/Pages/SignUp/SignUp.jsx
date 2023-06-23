@@ -26,7 +26,6 @@ const SignUp = () => {
         googleSignIn(googleProvider)
             .then(result => {
                 const user = result.user;
-                console.log(user)
                 toast.success('User Created Successfully');
                 navigate('/')
                 
@@ -46,7 +45,6 @@ const SignUp = () => {
        })
        .then(res=>res.json())
        .then(imageData=>{
-        console.log(imageData)
         if(imageData.success){
             createUser(data.email, data.password)
             .then(result => {
@@ -75,7 +73,7 @@ const SignUp = () => {
 
         }
        })
-        console.log(image)
+ 
 
     
     }
