@@ -7,7 +7,7 @@ import { ShareContext } from "../../ShareProvider/ShareProvider";
 
 
 const AddProduct = () => {
-
+const{colors}=useContext(ShareContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const { user } = useContext(AuthContext);
@@ -80,7 +80,7 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <h1 className='text-2xl ml-6 text-[#0a8803]'>Product Add</h1>
+            <h1 className='text-2xl ml-6 text-[#0a8803]' style={{color: colors[0]?.color}}>Product Add</h1>
             <div>
 
                 <div className=' p-7'>
@@ -164,7 +164,7 @@ const AddProduct = () => {
 
 
 
-                        <input className='w-36 bg-[#0a8803] px-6 py-2 text-white mt-5' value='Add Product' type="submit" />
+                        <input className='w-36 bg-[#0a8803] px-6 py-2 text-white mt-5' value='Add Product' type="submit" style={{backgroundColor: colors[0]?.color}} />
                     </form>
 
                 </div>

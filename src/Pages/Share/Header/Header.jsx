@@ -10,7 +10,7 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [navbar, setNavbar] = useState(true);
   const [dropDown, setDropDown] = useState(false);
-  const{profile}=useContext(ShareContext);
+  const{profile, colors}=useContext(ShareContext);
 
   const handleLogOut = () => {
 
@@ -22,7 +22,7 @@ const Header = () => {
 
   const dropDownItems=<>
       <li onClick={()=>setNavbar(!navbar)}><Link to='/myProfile'>My Profile</Link></li>
-      <button onClick={()=>{handleLogOut(); setNavbar(!navbar)}} className='bg-[#0a8803] px-6 py-3 uppercase text-white font-semibold'>Log Out</button>
+      <button onClick={()=>{handleLogOut(); setNavbar(!navbar)}} className='bg-[#0a8803] px-6 py-3 uppercase text-white font-semibold' style={{backgroundColor: colors[0]?.color}}>Log Out</button>
   </>
   const manuItem = <>
     <li onClick={()=>setNavbar(!navbar)}><Link to='/'>Home</Link></li>
@@ -75,7 +75,7 @@ const Header = () => {
 
         </>
         :
-        <li className='lg:py-2 lg:px-6 lg:bg-[#0a8803] lg:text-white' onClick={()=>setNavbar(!navbar)}><Link to='/login'>Login</Link></li>
+        <li className='lg:py-2 lg:px-6 lg:bg-[#0a8803] lg:text-white' onClick={()=>setNavbar(!navbar)}><Link to='/login' >Login</Link></li>
     }
 
   </>
@@ -92,7 +92,7 @@ const Header = () => {
 							<h2 className="relative text-2xl font-bold flex items-center">
               <img src='https://i.ibb.co/MV0Sz02/logo-removebg-preview-1.png' alt="" className='z-10' />
              <div className='absolute mb-2 ml-[41px]'>
-             <span className=' text-3xl text-[#0a8803]'>Carena</span>
+             <span className=' text-3xl text-[#0a8803]' style={{color: colors[0]?.color}}>Carena</span>
              
              </div>
 							</h2>
@@ -103,11 +103,11 @@ const Header = () => {
 								className="p-2 text-gray-700 rounded-md outline-none"
 								onClick={() => setNavbar(!navbar)}>
 								{navbar ? (
-									<HiMenu className="w-8 h-8 text-3xl font-bold text-[#0a8803]"></HiMenu>
+									<HiMenu className="w-8 h-8 text-3xl font-bold text-[#0a8803]" style={{color: colors[0]?.color}}></HiMenu>
 								) : (
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										className="w-8 h-8 text-3xl font-bold text-[#0a8803]"
+										className="w-8 h-8 text-3xl font-bold text-[#0a8803]" style={{color: colors[0]?.color}}
 										viewBox="0 0 20 20"
 										fill="currentColor">
 										<path

@@ -5,6 +5,7 @@ import Loading from '../../Pages/Loading/Loading';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from "axios";
 import useBuyer from '../../Hookes/useBuyer';
+import { ShareContext } from '../../ShareProvider/ShareProvider';
 
 
 
@@ -13,6 +14,7 @@ import useBuyer from '../../Hookes/useBuyer';
 const Bookings = () => {
   const { user } = useContext(AuthContext);
   const [isBuyer] = useBuyer(user?.email);
+  const{colors}=useContext(ShareContext)
 
   const { data: bookings = [] } = useQuery({
     queryKey: ['bookingData', user?.email],
@@ -32,14 +34,14 @@ const Bookings = () => {
     <>
       {
         isBuyer && <div>
-          <h1 className='text-2xl lg:mb-8 ml-5 font-bold text-[#0a8803]'>Booking: {bookings.length}</h1>
+          <h1 className='text-2xl lg:mb-8 ml-5 font-bold text-[#0a8803]' style={{color: colors[0]?.color}}>Booking: {bookings.length}</h1>
           <div>
 
             <div className="overflow-x-auto hidden lg:block">
               <table className="table table-zebra w-full">
 
                 <thead>
-                  <tr className='bg-[#0a8803] text-white'>
+                  <tr className='bg-[#0a8803] text-white' style={{backgroundColor: colors[0]?.color}}>
                     <th>SL.No</th>
                     <th>Name</th>
                     <th>Product</th>
@@ -58,10 +60,10 @@ const Bookings = () => {
                       <td data-label='PRICE'>{booking.price}</td>
                       <td data-label='LOCATION'>{booking.location}</td>
                       <td data-label='PAYMENT'>{
-                        booking.price && !booking.paid && <Link to={`/dashboard/payments/${booking._id}`}><button className='bg-[#0a8803] text-white px-4 py-2'>Pay Now</button></Link>
+                        booking.price && !booking.paid && <Link to={`/dashboard/payments/${booking._id}`}><button className='bg-[#0a8803] text-white px-4 py-2' style={{backgroundColor: colors[0]?.color}}>Pay Now</button></Link>
                       }
                         {
-                          booking.price && booking.paid && <span className='text-green-500'>Paid</span>
+                          booking.price && booking.paid && <span className='text-green-500' style={{color: colors[0]?.color}}>Paid</span>
                         }
                       </td>
                     </tr>)
@@ -81,7 +83,7 @@ const Bookings = () => {
 
                   <tbody>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                         SL.No
                       </th>
                       <td className="px-6 py-4">
@@ -90,7 +92,7 @@ const Bookings = () => {
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                         Name
                       </th>
                       <td className="px-6 py-4">
@@ -98,7 +100,7 @@ const Bookings = () => {
                       </td>
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                       Product
                       </th>
                       <td className="px-6 py-4">
@@ -107,28 +109,28 @@ const Bookings = () => {
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                         Price
                       </th>
                       <td className="px-6 py-4">{booking.price}</td>
 
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                        Location
                       </th>
                       <td className="px-6 py-4">{booking.location}</td>
                     </tr>
                     <tr className="">
-                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                      <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                         Payment
                       </th>
                       <td className="px-6 py-4">
                         {
-                          booking.price && !booking.paid && <Link to={`/dashboard/payments/${booking._id}`}><button className='bg-[#0a8803] text-white px-4 py-2'>Pay Now</button></Link>
+                          booking.price && !booking.paid && <Link to={`/dashboard/payments/${booking._id}`}><button className='bg-[#0a8803] text-white px-4 py-2' style={{backgroundColor: colors[0]?.color}}>Pay Now</button></Link>
                         }
                         {
-                          booking.price && booking.paid && <span className='text-green-500'>Paid</span>
+                          booking.price && booking.paid && <span className='text-green-500' style={{color: colors[0]?.color}}>Paid</span>
                         }
                       </td>
 

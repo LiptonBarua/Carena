@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ShareContext } from '../../../ShareProvider/ShareProvider';
 
 const Blog = () => {
+const{colors}=useContext(ShareContext)
+const [isHovering, setIsHovering] = useState(false);
+ 
+
+const handleMouseEnter = () => {
+  setIsHovering(true);
+};
+
+const handleMouseLeave = () => {
+  setIsHovering(false);
+};
 
     const blogQustion = [
         {
@@ -44,14 +56,14 @@ const Blog = () => {
 
                     <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {
-                blogQustion?.map((blog, i)=> <div key={blog.id}>
+                blogQustion?.map((blog, i)=> <div key={i}>
                     <a
                             className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-[#0a8803]/10 hover:shadow-[#0a8803]/10"
                             href="/services/digital-campaigns"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-10 w-10 text-[#0a8803]"
+                                className="h-10 w-10 text-[#0a8803]"  style={{color: colors[0]?.color}}
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -78,9 +90,8 @@ const Blog = () => {
               }
 
                     </div>
-
                     <div className="mt-12 text-center">
-                        <Link to='/'><button className="text-[white] border border-[#0a8803] hover:bg-[black] hover:border-white  active:bg-[#0a8803] bg-[#0a8803] text-lg px-12 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Get Started Today</button></Link>
+                        <Link to='/'><button className="text-[white] border border-[#0a8803] hover:bg-[black] hover:border-white  active:bg-[#0a8803] bg-[#0a8803] text-lg px-12 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" style={{backgroundColor: isHovering ? 'black' : colors[0]?.color,  border: isHovering ? 'black' : colors[0]?.color,}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>Get Started Today</button></Link>
                     </div>
                 </div>
             </section>

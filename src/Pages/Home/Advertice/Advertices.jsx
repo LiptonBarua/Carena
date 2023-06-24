@@ -4,15 +4,29 @@ import { MdVerified } from "react-icons/md";
 import 'react-photo-view/dist/react-photo-view.css';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import useBuyer from '../../../Hookes/useBuyer';
+import { ShareContext } from '../../../ShareProvider/ShareProvider';
 
 
 const Advertices = ({ advertice, setProductsName }) => {
   const [userData, setUserData] = useState({});
   const{user}=useContext(AuthContext)
   const [isBuyer] = useBuyer(user?.email);
+  const{colors}=useContext(ShareContext)
 
   const { name, email, title, location, date, time, image, original, resale, phone, year } = advertice;
   const [loadUserData, setLoadUserData] = useState([]);
+
+
+  const [isHovering, setIsHovering] = useState(false);
+ 
+
+const handleMouseEnter = () => {
+  setIsHovering(true);
+};
+
+const handleMouseLeave = () => {
+  setIsHovering(false);
+};
 
   useEffect(() => {
 
@@ -37,7 +51,7 @@ const Advertices = ({ advertice, setProductsName }) => {
       />
     
       <div className=' flex justify-end -mt-10'>
-        <button className='bg-[#0a8803] text-white hover:bg-black font-bold  px-5 py-2'>
+        <button className='bg-[#0a8803] text-white hover:bg-black font-bold  px-5 py-2' style={{backgroundColor: isHovering ? 'black' : colors[0]?.color,  border: isHovering ? 'black' : colors[0]?.color,}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <div className='flex items-center'>
             <del className='text-sm mr-1'>{original}</del>
             <h1 className='text-md'>{resale}</h1>
@@ -66,7 +80,7 @@ const Advertices = ({ advertice, setProductsName }) => {
         <p>Phone: {phone}</p>
         <div>
           {
-            isBuyer && <div><label onClick={()=>setProductsName(advertice)} htmlFor="product-modal" className=" mb-3 mt-6 btn btn-sm w-full text-white hover:text-black bg-[#0a8803]">Book Now</label></div>
+            isBuyer && <div><label onClick={()=>setProductsName(advertice)} htmlFor="product-modal" className=" mb-3 mt-6 btn btn-sm w-full text-white  bg-[#0a8803]" style={{backgroundColor: colors[0]?.color}}>Book Now</label></div>
     
           }
     </div>

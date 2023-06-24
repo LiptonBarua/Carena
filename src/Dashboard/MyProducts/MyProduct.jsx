@@ -1,13 +1,18 @@
 import moment from 'moment';
 import { MdVerified} from "react-icons/md";
 import {HiOutlineTrash } from "react-icons/hi";
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ShareContext } from '../../ShareProvider/ShareProvider';
 
 
 const MyProduct = ({product, handleDeleteProduct, handleAdvertice}) => {
   const{_id,image,email, title, location, phone, date, original, resale, name, year, advertice} =product;
   const [loadUserData, setLoadUserData] = useState([]);
   const [userData, setUserData] = useState({});
+const{colors}=useContext(ShareContext)
+
+
+
   useEffect(() => {
     
     fetch(`https://server12.vercel.app/users`)
@@ -32,7 +37,7 @@ useEffect(() => {
               />
             
               <div className=' flex justify-end -mt-12'>
-                <button className='bg-[#0a8803] text-white hover:bg-black font-bold  px-6 py-3'>
+                <button className='bg-[#0a8803] text-white hover:bg-black font-bold  px-6 py-3' >
                   <div className='flex items-center'>
                     <del className='text-sm mr-1'>{original}</del>
                     <h1 className='text-md'>{resale}</h1>
@@ -62,7 +67,7 @@ useEffect(() => {
                 <div>
                 <div className='flex justify-between mt-4'>
                 <button onClick={()=>handleAdvertice(_id)} className="">Advertise</button>
-               <button onClick={()=>handleDeleteProduct(_id)} className="text-3xl text-[#0a8803]"><HiOutlineTrash></HiOutlineTrash></button>
+               <button onClick={()=>handleDeleteProduct(_id)} className="text-3xl text-[#0a8803]" style={{color: colors[0]?.color}}><HiOutlineTrash></HiOutlineTrash></button>
                </div>
                 </div>
               </div>

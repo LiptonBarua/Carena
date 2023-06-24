@@ -4,7 +4,7 @@ const CarSales = () => {
     return (
         <section className="bg-[#eeeaea] mt-24">
             <div className="py-24 px-4 md:max-w-[85%] mx-auto container flex flex-col mx-auto lg:flex-row">
-                <div className="w-full h-[320px] lg:w-[500px]" style={{ backgroundImage: `url(https://cdn.thezebra.com/zfront/media/production/images/man-talking-on-phone-smart-car-screen.format-jpeg.jpg)`, backgroundPosition: `center`, backgroundSize: `cover` }}></div>
+                <div className="w-full h-[320px] md:h-[450px] lg:w-[500px]" style={{ backgroundImage: `url(https://cdn.thezebra.com/zfront/media/production/images/man-talking-on-phone-smart-car-screen.format-jpeg.jpg)`, backgroundPosition: `center`, backgroundSize: `cover` }}></div>
                 <div className="flex flex-col w-full lg:w-2/3 lg:px-12 pt-5 lg:pt-0 text-[#131313]">
                     <h1 className='text-xl font-semibold'>We are Trusted Name in Car Sales & Services</h1>
                     <h2 className="text-2xl leading-none">Used by Million of People Every Month!</h2>

@@ -6,7 +6,7 @@ import { toast } from 'react-hot-toast';
 
 const ProfileEdit = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const {profileRefetch } = useContext(ShareContext);
+    const {profileRefetch, colors } = useContext(ShareContext);
     const { user } = useContext(AuthContext)
 
     const handleProfileEdit = (data) => {
@@ -96,7 +96,7 @@ const ProfileEdit = () => {
                             <div className="m-6 items-end ">
 
                                 <div className=" flex ">
-                                    <button type="submit" className="my-4 mt-6 pl-4 pt-1 pb-1 pr-4 bg-[#0a8803] rounded text-white font-medium w-36 " style={{ transitionDuration: `1s` }}>Edit Profile</button>
+                                    <button type="submit" className="my-4 mt-6 pl-4 pt-1 pb-1 pr-4 bg-[#0a8803] rounded text-white font-medium w-36 " style={{ transitionDuration: `1s`, backgroundColor: colors[0]?.color }}>Edit Profile</button>
 
                                 </div>
                             </div>

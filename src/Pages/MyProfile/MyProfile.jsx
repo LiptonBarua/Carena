@@ -5,7 +5,7 @@ import ProfileEdit from './ProfileEdit';
 import ColorChange from './ColorChange';
 
 const MyProfile = () => {
-const{profile} =useContext(ShareContext)
+const{profile, colors} =useContext(ShareContext)
 
 
 
@@ -14,7 +14,7 @@ const{profile} =useContext(ShareContext)
         <div className='py-24'>
             <div className="px-[20px] lg:px-0 h-auto lg:h-[550px] flex lg:justify-center">
                 <div className="bg-white shadow-lg  lg:m-8 w-full lg:w-2/3 grid lg:flex lg:rounded-xl">
-                    <div className="h-[450px] lg:h-auto lg:w-1/3 bg-[#0a8803] lg:rounded-l-lg">
+                    <div className="h-[450px] lg:h-auto lg:w-1/3 bg-[#0a8803] lg:rounded-l-lg" style={{backgroundColor: colors[0]?.color}}>
                         <div className="text-white lg:m-6 font-medium "></div>
                         <div className="flex items-center justify-center mt-6 lg:mt-0">
                             <div>

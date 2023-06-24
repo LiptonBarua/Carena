@@ -1,11 +1,13 @@
 
 import { useQuery } from '@tanstack/react-query';
-import React, { } from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import Loading from '../../Pages/Loading/Loading';
 import { HiTrash } from 'react-icons/hi';
+import { ShareContext } from '../../ShareProvider/ShareProvider';
 
 const AllUser = () => {
+  const{colors}=useContext(ShareContext)
 
 
   const { data: users = [], isLoading, refetch } = useQuery({
@@ -73,14 +75,14 @@ const AllUser = () => {
   }
   return (
     <div className=''>
-      <h1 className='text-2xl lg:mb-10 ml-5 text-[#0a8803]'>All User : {users?.length}</h1>
+      <h1 className='text-2xl lg:mb-10 ml-5 text-[#0a8803]' style={{color: colors[0]?.color}}>All User : {users?.length}</h1>
       <div className='hidden lg:block'>
         <div className="overflow-x-auto ">
 
           <table className="table table-zebra w-full text-black">
 
             <thead>
-              <tr className='bg-[#0a8803] text-white'>
+              <tr className='bg-[#0a8803] text-white' style={{backgroundColor: colors[0]?.color}}>
                 <th>SL.No</th>
                 <th>Name</th>
                 <th>Email</th>
@@ -99,8 +101,8 @@ const AllUser = () => {
                   <td>{user.email}</td>
                   <td>{user.role === 'admin' ? user.role : user.role}</td>
                   <td>{user?.role === "Seller" && user?.isVerified !== 'verified' && user?.role !== "admin" && <button onClick={() => handleMakeVerify(user._id)} className='btn btn-xs btn-primary'>Make Verify</button>}</td>
-                  <td>{user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='bg-[#0a8803] text-white rounded-md py-1 px-2'>Make Admin</button>}</td>
-                  <td ><button onClick={() => handleDeleteUsers(user)}><HiTrash className='text-2xl text-[#0a8803]'></HiTrash></button></td>
+                  <td>{user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='bg-[#0a8803] text-white rounded-md py-1 px-2' style={{backgroundColor: colors[0]?.color}}>Make Admin</button>}</td>
+                  <td ><button onClick={() => handleDeleteUsers(user)}><HiTrash className='text-2xl text-[#0a8803]' style={{color: colors[0]?.color}}></HiTrash></button></td>
                 </tr>)
               }
             </tbody>
@@ -120,7 +122,7 @@ const AllUser = () => {
 
               <tbody>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium  text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium  text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                     SL.No
                   </th>
                   <td className="px-6 py-4">
@@ -129,7 +131,7 @@ const AllUser = () => {
 
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                     Name
                   </th>
                   <td className="px-6 py-4">
@@ -137,7 +139,7 @@ const AllUser = () => {
                   </td>
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                     Email
                   </th>
                   <td className="px-6 py-4">
@@ -146,7 +148,7 @@ const AllUser = () => {
 
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                     Role
                   </th>
                   <td className="px-6 py-4">
@@ -155,7 +157,7 @@ const AllUser = () => {
 
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                     Verified
                   </th>
                   <td className="px-6 py-4">
@@ -163,20 +165,20 @@ const AllUser = () => {
                   </td>
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                     Admin
                   </th>
                   <td className="px-6 py-4">
-                    {user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='bg-[#0a8803] text-white rounded-md py-1 px-2'>Make Admin</button>}
+                    {user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='bg-[#0a8803] text-white rounded-md py-1 px-2' style={{backgroundColor: colors[0]?.color}}>Make Admin</button>}
                   </td>
 
                 </tr>
                 <tr className="">
-                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                     Delete
                   </th>
                   <td className="px-6 py-4">
-                    <button onClick={() => handleDeleteUsers(user)}><HiTrash className='text-2xl text-[#0a8803]'></HiTrash></button>
+                    <button onClick={() => handleDeleteUsers(user)}><HiTrash className='text-2xl text-[#0a8803]' style={{color: colors[0]?.color}}></HiTrash></button>
                   </td>
 
                 </tr>

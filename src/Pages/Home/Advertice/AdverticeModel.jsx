@@ -2,12 +2,14 @@
 import toast from 'react-hot-toast';
 import { useContext } from 'react';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import { ShareContext } from '../../../ShareProvider/ShareProvider';
 
 const AdverticeModel = ({ productsName}) => {
 
    
     const { user } = useContext(AuthContext);
     const{title, resale} =productsName;
+    const{colors}=useContext(ShareContext)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -64,7 +66,7 @@ const AdverticeModel = ({ productsName}) => {
                         <input type="text"  name='location'  placeholder="Meeting Location" required className="input input-bordered input-info w-full my-3" /><br />
                         <input type="number" name='phone' placeholder="Phone Name" required className="input input-bordered w-full mb-3" /><br />
                        
-                        <button type='submit'> <label htmlFor="product-modal" className="btn btn-sm w-full text-white bg-[#0a8803]">Submit</label></button>
+                        <button type='submit'> <label htmlFor="product-modal" className="btn btn-sm w-full text-white bg-[#0a8803]" style={{backgroundColor: colors[0]?.color}}>Submit</label></button>
                     </form>
                 </div>
             </div>
