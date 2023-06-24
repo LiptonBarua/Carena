@@ -20,6 +20,7 @@ const ColorChange = () => {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(colorData)
     
@@ -44,7 +45,7 @@ const ColorChange = () => {
              <select  {...register("color")} required className="select w-full">
                  <option selected disabled>Sellect Your Color</option>
                  <option className='bg-[navy] text-white'>Navy</option>
-                 <option className='bg-[red] text-white'>red</option>
+                 <option className='bg-[red] text-white'>Red</option>
                  <option className='bg-[purple] text-white'>Purple</option>
                  <option className='bg-[#0a8803] text-white'>#0a8803</option>
                  <option className='bg-[#d01818] text-white'>#d01818</option>

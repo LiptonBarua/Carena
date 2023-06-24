@@ -5,6 +5,8 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import useBuyer from '../../../Hookes/useBuyer';
 import { ShareContext } from '../../../ShareProvider/ShareProvider';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Advertices = ({ advertice, setProductsName }) => {
@@ -41,8 +43,20 @@ const handleMouseLeave = () => {
   }, [email, loadUserData])
 
 
+
+
+  useEffect(() => {
+    Aos.init({
+      // Configure AOS options here (see documentation for available options)
+      duration: 800, // Animation duration in milliseconds
+      offset: 200, // Offset (in pixels) from the top/bottom of the viewport to trigger animations
+      easing: 'ease-in-out', // Easing function for animations
+      // Add more options as needed
+    });
+  }, []);
+  
   return (
-    <div>
+    <div data-aos="fade-right">
     <article className="overflow-hidden shadow transition hover:shadow-lg">
       <img
         alt="Office"

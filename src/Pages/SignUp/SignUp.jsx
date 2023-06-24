@@ -87,7 +87,8 @@ const SignUp = () => {
         fetch(' https://resele-server-side.vercel.app/users', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(users)
         })

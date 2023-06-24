@@ -26,7 +26,7 @@ const Banner = () => {
                         </div>
                     </div>
                     <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                        <img src='https://github.com/LiptonBarua/Car-Sale/blob/main/src/Assets/950192_720-removebg-preview.png?raw=true' alt="" className="object-contain h-72 lg:h-96 " />
+                        <img src='https://i.ibb.co/GnkPR0Y/2020-mitsubishi-pajero-sport-debuts-india-launch-price-15-removebg-preview.png' alt="" className="object-contain h-72 lg:h-96 " />
                     </div>
                 </div>
             </section>
