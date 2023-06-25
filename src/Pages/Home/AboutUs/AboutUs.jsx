@@ -1,8 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { FaRegHandshake, FaCarSide } from "react-icons/fa";
 import { ShareContext } from '../../../ShareProvider/ShareProvider';
 import AboutUsOneButton from './AboutUsOneButton';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const AboutUs = () => {
 	const {colors}=useContext(ShareContext);
@@ -18,6 +20,17 @@ const AboutUs = () => {
     const handleMouseLeave = () => {
       setIsHovering(false);
     };
+
+	
+	useEffect(() => {
+		Aos.init({
+		  duration: 800,
+		  offset: 200,
+		  easing: 'ease-in-out',
+		});
+	  }, []);
+
+
 	return (
 		<div className='px-4 py-20 md:max-w-[90%] mx-auto'>
 			<section className="dark:bg-gray-800 dark:text-gray-100">
@@ -41,7 +54,7 @@ const AboutUs = () => {
 						</div>
 						<div aria-hidden="true" className="mt-10 lg:mt-0">
 							<div className='flex'>
-								<div className='hidden lg:block'>
+								<div data-aos="fade-right" className='hidden lg:block'>
 									<img className='w-[650px] h-[700px] -mt-20' src="https://i.ibb.co/CvvzS3S/bg-2.png" alt="" />
 								</div>
 								<div>

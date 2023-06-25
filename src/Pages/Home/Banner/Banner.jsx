@@ -13,6 +13,9 @@ const Banner = () => {
     const handleMouseLeave = () => {
       setIsHovering(false);
     };
+
+
+    
     return (
         <div className='' style={{ backgroundImage: `url(https://raw.githubusercontent.com/LiptonBarua/Car-Sale/main/src/Assets/2021-Best-Smartphones-3-840x472.jpg.webp)`, backgroundSize: `cover`, backgroundRepeat: `no-repeat` }}>
             <section className="pt-14 bg-[black] bg-opacity-90" >

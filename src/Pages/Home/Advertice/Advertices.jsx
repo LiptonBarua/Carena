@@ -15,7 +15,7 @@ const Advertices = ({ advertice, setProductsName }) => {
   const [isBuyer] = useBuyer(user?.email);
   const{colors}=useContext(ShareContext)
 
-  const { name, email, title, location, date, time, image, original, resale, phone, year } = advertice;
+  const {firstName, lastName, email, title, location, date, time, image, original, resale, phone, year } = advertice;
   const [loadUserData, setLoadUserData] = useState([]);
 
 
@@ -47,11 +47,9 @@ const handleMouseLeave = () => {
 
   useEffect(() => {
     Aos.init({
-      // Configure AOS options here (see documentation for available options)
-      duration: 800, // Animation duration in milliseconds
-      offset: 200, // Offset (in pixels) from the top/bottom of the viewport to trigger animations
-      easing: 'ease-in-out', // Easing function for animations
-      // Add more options as needed
+      duration: 800,
+      offset: 200,
+      easing: 'ease-in-out',
     });
   }, []);
   
@@ -89,7 +87,7 @@ const handleMouseLeave = () => {
             {title}
           </h3>
         </a>
-        <h4 className=' text-lg flex items-center font-bold'>{name}{userData?.isVerified && <span className=' text-blue-500 ml-1'><MdVerified></MdVerified></span>}</h4>
+        <h4 className=' text-lg flex items-center font-bold'>{firstName} {lastName}{userData?.isVerified && <span className=' text-blue-500 ml-1'><MdVerified></MdVerified></span>}</h4>
         <p>Location: {location}</p>
         <p>Phone: {phone}</p>
         <div>

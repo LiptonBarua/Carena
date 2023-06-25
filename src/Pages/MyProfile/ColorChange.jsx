@@ -49,6 +49,8 @@ const ColorChange = () => {
                  <option className='bg-[purple] text-white'>Purple</option>
                  <option className='bg-[#0a8803] text-white'>#0a8803</option>
                  <option className='bg-[#d01818] text-white'>#d01818</option>
+                 <option className='bg-[#FF6A00] text-white'>#FF6A00</option>
+                 <option className='bg-[#0f3da0] text-white'>#0f3da0</option>
                  
              </select>
          </div>

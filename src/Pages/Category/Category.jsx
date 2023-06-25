@@ -11,7 +11,7 @@ import { ShareContext } from '../../ShareProvider/ShareProvider';
 
 
 const Category = ({products, setProductsName}) => {
-    const{name,email, title, location, date, image, original, resale, phone, year} =products;
+    const{firstName, lastName, email, title, location, date, image, original, resale, phone, year} =products;
     const [loadUserData, setLoadUserData] = useState([]);
 		const [userData, setUserData] = useState({});
     const{user}=useContext(AuthContext)
@@ -76,7 +76,7 @@ const Category = ({products, setProductsName}) => {
               {title}
             </h3>
           </a>
-          <h4 className=' text-lg flex items-center font-bold'>{name}{userData?.isVerified && <span className=' text-blue-500 ml-1'><MdVerified></MdVerified></span>}</h4>
+          <h4 className=' text-lg flex items-center font-bold'>{firstName} {lastName}{userData?.isVerified && <span className=' text-blue-500 ml-1'><MdVerified></MdVerified></span>}</h4>
           <p>Location: {location}</p>
           <p>Phone: {phone}</p>
           <div>

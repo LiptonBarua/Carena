@@ -8,7 +8,7 @@ import { ShareContext } from "../../ShareProvider/ShareProvider";
 
 const AddProduct = () => {
 const{colors}=useContext(ShareContext)
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const { user } = useContext(AuthContext);
     const { profile } = useContext(ShareContext)
@@ -18,7 +18,7 @@ const{colors}=useContext(ShareContext)
     // const imgHostKey = process.env.REACT_APP_imgbb_key;
 
 
-    const { data: categories = [], reset } = useQuery({
+    const { data: categories = [], } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
             const res = await fetch('https://resele-server-side.vercel.app/category')
@@ -70,7 +70,6 @@ const{colors}=useContext(ShareContext)
                         .then(data => {
                             toast.success('Product Add is my Successfully');
                             reset()
-                            
                         })
                         .catch(error => {
                             toast.error(error.message)
