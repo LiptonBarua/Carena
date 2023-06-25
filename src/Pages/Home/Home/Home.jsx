@@ -13,6 +13,7 @@ import Advertice from '../Advertice/Advertice';
 import CategoriesName from '../CategoriesName/CategoriesName';
 import Testimonial from '../Testimonial/Testimonial';
 import Practice from '../Practice/Practice';
+import TimeZone from '../TimeZone/TimeZone';
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <Banner></Banner>
             <Dealership></Dealership>
             <Practice></Practice>
+            <TimeZone></TimeZone>
             <CategoriesName></CategoriesName>
             <CarSales></CarSales>
             <SellCar></SellCar>

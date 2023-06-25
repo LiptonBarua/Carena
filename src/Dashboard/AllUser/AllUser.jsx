@@ -1,10 +1,11 @@
 
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import Loading from '../../Pages/Loading/Loading';
 import { HiTrash } from 'react-icons/hi';
 import { ShareContext } from '../../ShareProvider/ShareProvider';
+import { useContext } from 'react';
+import moment from 'moment';
 
 const AllUser = () => {
   const{colors}=useContext(ShareContext)
@@ -86,6 +87,7 @@ const AllUser = () => {
                 <th>SL.No</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Date</th>
                 <th>Role</th>
                 <th>Verified</th>
                 <th>Admin</th>
@@ -99,8 +101,9 @@ const AllUser = () => {
                   <td>{i + 1}</td>
                   <td>{user.firstName} {user.lastName}</td>
                   <td>{user.email}</td>
+                  <td>{moment(user.date).format('LL')}</td>
                   <td>{user.role === 'admin' ? user.role : user.role}</td>
-                  <td>{user?.role === "Seller" && user?.isVerified !== 'verified' && user?.role !== "admin" && <button onClick={() => handleMakeVerify(user._id)} className='btn btn-xs btn-primary'>Make Verify</button>}</td>
+                  <td>{user?.role === "Seller" && user?.isVerified !== 'verified' && user?.role !== "admin" && <button onClick={() => handleMakeVerify(user._id)} className='bg-[#880303] text-white rounded-md py-1 px-2' >Make Verify</button>}</td>
                   <td>{user?.role !== "admin" && <button onClick={() => handleMakeAdmin(user._id)} className='bg-[#0a8803] text-white rounded-md py-1 px-2' style={{backgroundColor: colors[0]?.color}}>Make Admin</button>}</td>
                   <td ><button onClick={() => handleDeleteUsers(user)}><HiTrash className='text-2xl text-[#0a8803]' style={{color: colors[0]?.color}}></HiTrash></button></td>
                 </tr>)
@@ -149,6 +152,15 @@ const AllUser = () => {
                 </tr>
                 <tr className="">
                   <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
+                    Date
+                  </th>
+                  <td className="px-6 py-4">
+                  {moment(user.date).format('LL')}
+                  </td>
+
+                </tr>
+                <tr className="">
+                  <th scope="row" className="px-6 py-4 font-medium text-white bg-[#0a8803] w-36 whitespace-nowrap" style={{backgroundColor: colors[0]?.color}}>
                     Role
                   </th>
                   <td className="px-6 py-4">
@@ -161,7 +173,7 @@ const AllUser = () => {
                     Verified
                   </th>
                   <td className="px-6 py-4">
-                    {user?.role === "Seller" && user?.isVerified !== 'verified' && user?.role !== "admin" && <button onClick={() => handleMakeVerify(user._id)} className='btn btn-xs btn-primary'>Make Verify</button>}
+                    {user?.role === "Seller" && user?.isVerified !== 'verified' && user?.role !== "admin" && <button onClick={() => handleMakeVerify(user._id)} className='bg-[#880303] text-white rounded-md py-1 px-2'>Make Verify</button>}
                   </td>
                 </tr>
                 <tr className="">

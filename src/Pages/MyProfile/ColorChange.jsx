@@ -49,6 +49,7 @@ const ColorChange = () => {
                  <option className='bg-[purple] text-white'>Purple</option>
                  <option className='bg-[#0a8803] text-white'>#0a8803</option>
                  <option className='bg-[#d01818] text-white'>#d01818</option>
+                 
              </select>
          </div>
          <input className='w-36 bg-[#0a8803] px-6 py-2 text-white' value='Submit' type="submit" style={{backgroundColor: colors[0]?.color}} />

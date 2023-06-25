@@ -9,13 +9,14 @@ const AdverticeModel = ({ productsName}) => {
    
     const { user } = useContext(AuthContext);
     const{title, resale} =productsName;
-    const{colors}=useContext(ShareContext)
+    const{colors, profile}=useContext(ShareContext)
 
     const handleSubmit = (event) => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
-        const name = form.name.value;
+        const firstName = form.firstName.value;
+        const lastName = form.lastName.value;
         const price= form.price.value;
         const location= form.location.value;
         const phone= form.phone.value;
@@ -23,7 +24,8 @@ const AdverticeModel = ({ productsName}) => {
 
         const booking={
             email,
-            name,
+            firstName,
+            lastName,
             price,
             location,
             phone,
@@ -60,7 +62,10 @@ const AdverticeModel = ({ productsName}) => {
                     <h3 className="font-bold text-lg">{title}</h3>
                     <form onSubmit={handleSubmit}>
                       
-                        <input type="text" name='name'  defaultValue={user?.displayName} placeholder="Full Name" className="input input-bordered input-info w-full my-3" /><br />
+                    <div className='grid grid-cols-2 gap-4'>
+                      <input type="text" name='firstName'  defaultValue={profile[0]?.firstName} readOnly placeholder="Full Name" className="input input-bordered input-info w-full mt-3" />
+                      <input type="text" name='lastName'  defaultValue={profile[0]?.lastName} readOnly placeholder="Full Name" className="input input-bordered input-info w-full mt-3" />
+                      </div>
                         <input type="number" defaultValue={resale} name='price'  placeholder="Price" className="input input-bordered input-info w-full mt-3" /><br />
                         <input name='email' defaultValue={user?.email} type="email" placeholder="Type here" className="input input-bordered input-info w-full" />
                         <input type="text"  name='location'  placeholder="Meeting Location" required className="input input-bordered input-info w-full my-3" /><br />
