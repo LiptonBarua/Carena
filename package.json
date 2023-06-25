@@ -26,9 +26,11 @@
     "react-image-crop": "^10.1.4",
     "react-photo-view": "^1.2.3",
     "react-router-dom": "^6.13.0",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "swiper": "^9.4.1"
+    "swiper": "^9.4.1",
+    "web-audio-api": "^0.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

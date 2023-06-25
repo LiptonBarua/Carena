@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
-import {HiOutlineFilm, HiOutlineMinus, HiOutlineNewspaper} from "react-icons/hi";
+import {HiOutlineFilm,  HiOutlineMinus, HiOutlineNewspaper} from "react-icons/hi";
 import {MdEmojiTransportation} from "react-icons/md";
 import {GiDrill} from "react-icons/gi";
 import { ShareContext } from '../../../ShareProvider/ShareProvider';
+import OfferBanners from './OfferBanners';
 
 const OfferBanner = () => {
 
@@ -17,6 +18,42 @@ const OfferBanner = () => {
     const handleMouseLeave = () => {
       setIsHovering(false);
     };
+
+
+const offerData=[
+	{
+		id: '1',
+		icon: <HiOutlineFilm></HiOutlineFilm>,
+		name: 'The Wheel',
+		title: 'Balancing',
+		data: 'MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.',
+		bIcon: <HiOutlineMinus></HiOutlineMinus>
+	},
+	{
+		id: '2',
+		icon: <MdEmojiTransportation></MdEmojiTransportation>,
+		name: 'Transmission',
+		title: 'Installation',
+		data: 'MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.',
+		bIcon: <HiOutlineMinus></HiOutlineMinus>
+	},
+	{
+		id: '3',
+		icon: <GiDrill></GiDrill>,
+		name: 'CarZone',
+		title: 'Painting',
+		data: 'MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.',
+		bIcon: <HiOutlineMinus></HiOutlineMinus>
+	},
+	{
+		id: '4',
+		name: 'CarZone',
+		icon: <HiOutlineNewspaper></HiOutlineNewspaper>,
+		title: 'Inspection',
+		data: 'MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.',
+		bIcon: <HiOutlineMinus></HiOutlineMinus>
+	},
+]
 
     return (
         <section className="mb-16" style={{ backgroundImage: `url(https://4.bp.blogspot.com/-QAAtUt2yuSc/XGkB_h3K3MI/AAAAAAAA6GE/L2ztZEZKuQQ7joQ2Mi9pqZh3f-y0paFQwCLcBGAs/s1600/2019_nissan_terra_fiery_red.jpg)`, backgroundSize: `cover`, backgroundRepeat: `no-repeat` }}>
@@ -39,44 +76,10 @@ const OfferBanner = () => {
 </div>
 </div>
 	<div className="container lg:-mb-48 mx-auto grid justify-center gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-		<div className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#0a8803] hover:text-white"  style={{transition: `1s`, backgroundColor: isHovering ? colors[0]?.color : '',  border: isHovering ? 'black' : colors[0]?.color, color: isHovering? 'white' : 'black'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-		<h1 className='text-6xl'><HiOutlineFilm></HiOutlineFilm></h1>
-			<h3 className="mt-5 text-xl font-semibold">The Wheel</h3>
-			<h3 className="text-2xl font-semibold">Balancing</h3>
-			<div className="mt-6 leading-tight">
-				<p className='text-justify'>MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.</p>
-			</div>
-			<h1 className=" text-3xl"><HiOutlineMinus></HiOutlineMinus></h1>
-		</div>
-        <div className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#0a8803] hover:bg-[#0a8803] hover:text-white" style={{transition: `1s`, backgroundColor: isHovering ? colors[0]?.color : '',  border: isHovering ? 'black' : colors[0]?.color, color: isHovering? 'white' : 'black'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-		<h1 className='text-6xl'><MdEmojiTransportation></MdEmojiTransportation></h1>
-			<h3 className="mt-5 text-xl font-semibold">Transmission</h3>
-			<h3 className="text-2xl font-semibold">Installation</h3>
-			<div className="mt-6 leading-tight">
-				<p className='text-justify'>MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.</p>
-			</div>
-			<h1 className=" text-3xl"><HiOutlineMinus></HiOutlineMinus></h1>
-		</div>
-        <div className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#0a8803] hover:text-white" style={{transition: `1s`, backgroundColor: isHovering ? colors[0]?.color : '',  border: isHovering ? 'black' : colors[0]?.color, color: isHovering? 'white' : 'black'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-		<h1 className='text-6xl'><GiDrill></GiDrill></h1>
-			<h3 className="mt-5 text-xl font-semibold">CarZone</h3>
-			<h3 className="text-2xl font-semibold">Painting</h3>
-			<div className="mt-6 leading-tight">
-				<p className='text-justify'>MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.</p>
-			</div>
-			<h1 className=" text-3xl"><HiOutlineMinus></HiOutlineMinus></h1>
-		</div>
-		<div className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#0a8803] hover:text-white" style={{transition: `1s`, backgroundColor: isHovering ? colors[0]?.color : '',  border: isHovering ? 'black' : colors[0]?.color, color: isHovering? 'white' : 'black'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-		<h1 className='text-6xl'><HiOutlineNewspaper></HiOutlineNewspaper></h1>
-			<h3 className="mt-5 text-xl font-semibold">CarZone</h3>
-			<h3 className="text-2xl font-semibold">Inspection</h3>
-			<div className="mt-6 leading-tight">
-				<p className='text-justify'>MotorLand is nisi aliquip ex con velit esse cillum dolore fugiatal excepteur sint occaecat.</p>
-			</div>
-			<h1 className=" text-3xl"><HiOutlineMinus></HiOutlineMinus></h1>
-		</div>
+{
+	offerData?.map(offer=><OfferBanners key={offer.id} offer={offer}></OfferBanners>)
+}
 
-	
 	</div>
 </section>
       </div>
