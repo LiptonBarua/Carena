@@ -20,14 +20,12 @@ const OfferBanners = ({offer}) => {
 
 
     useEffect(() => {
-        Aos.init({
-          // Configure AOS options here (see documentation for available options)
-          duration: 800, // Animation duration in milliseconds
-          offset: 200, // Offset (in pixels) from the top/bottom of the viewport to trigger animations
-          easing: 'ease-in-out', // Easing function for animations
-          // Add more options as needed
-        });
-      }, []);
+      Aos.init({
+        duration: 800,
+        offset: 200, 
+        easing: 'ease-in-out',
+      });
+    }, []);
 
     return (
         <div data-aos="fade-right" className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#0a8803] hover:text-white"  style={{transition: `1s`, backgroundColor: isHovering ? colors[0]?.color : '',  border: isHovering ? 'black' : colors[0]?.color, color: isHovering? 'white' : 'black'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

@@ -21,11 +21,9 @@ const {img, name, position, title}= testimonail;
 
     useEffect(() => {
       AOS.init({
-        // Configure AOS options here (see documentation for available options)
-        duration: 800, // Animation duration in milliseconds
-        offset: 200, // Offset (in pixels) from the top/bottom of the viewport to trigger animations
-        easing: 'ease-in-out', // Easing function for animations
-        // Add more options as needed
+        duration: 800,
+        offset: 200, 
+        easing: 'ease-in-out',
       });
     }, []);
     

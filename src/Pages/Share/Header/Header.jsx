@@ -90,9 +90,9 @@ const Header = () => {
           </label>
 						<Link to="/">
 							<h2 className="relative text-2xl font-bold flex items-center">
-              <img src='https://i.ibb.co/MV0Sz02/logo-removebg-preview-1.png' alt="" className='z-10' />
-             <div className='absolute mb-2 ml-[41px]'>
-             <span className=' text-3xl text-[#0a8803]' style={{color: colors[0]?.color}}>Carena</span>
+              <img src='https://i.ibb.co/MV0Sz02/logo-removebg-preview-1.png' alt="" className='w-10 md:w-14 z-10' />
+             <div className='absolute mb-2 ml-[32px] md:ml-[44px]'>
+             <span className='text-2xl md:text-3xl text-[#0a8803]' style={{color: colors[0]?.color}}>Carena</span>
              
              </div>
 							</h2>
@@ -100,14 +100,14 @@ const Header = () => {
          </div>
 						<div className="lg:hidden flex items-center gap-1 justify-center">
 							<button
-								className="p-2 text-gray-700 rounded-md outline-none"
+								className="p-2 rounded-md outline-none"
 								onClick={() => setNavbar(!navbar)}>
 								{navbar ? (
-									<HiMenu className="w-8 h-8 text-3xl font-bold text-[#0a8803]" style={{color: colors[0]?.color}}></HiMenu>
+									<HiMenu className="w-8 h-8 text-2xl text-[#0a8803]" style={{color: colors[0]?.color}}></HiMenu>
 								) : (
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										className="w-8 h-8 text-3xl font-bold text-[#0a8803]" style={{color: colors[0]?.color}}
+										className="w-8 h-8 text-2xl text-[#0a8803]" style={{color: colors[0]?.color}}
 										viewBox="0 0 20 20"
 										fill="currentColor">
 										<path
