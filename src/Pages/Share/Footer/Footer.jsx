@@ -13,7 +13,7 @@ const Footer = () => {
           <h2 className="relative text-2xl font-bold flex items-center">
               <img src='https://i.ibb.co/MfvxQpp/logo-removebg-preview-1.png' alt="" className='z-10' />
              <div className='absolute mb-2 ml-[41px]'>
-             <span className=' text-3xl text-[#f1f5f1]'>Carena</span>
+             <span className=' text-3xl text-[#f1f5f1]'>CarTrek</span>
              
              </div>
 							</h2>

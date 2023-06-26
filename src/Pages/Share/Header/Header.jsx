@@ -91,8 +91,8 @@ const Header = () => {
 						<Link to="/">
 							<h2 className="relative text-2xl font-bold flex items-center">
               <img src='https://i.ibb.co/MV0Sz02/logo-removebg-preview-1.png' alt="" className='w-10 md:w-14 z-10' />
-             <div className='absolute mb-2 ml-[32px] md:ml-[44px]'>
-             <span className='text-2xl md:text-3xl text-[#0a8803]' style={{color: colors[0]?.color}}>Carena</span>
+             <div className='absolute mb-2 ml-[32px] md:ml-[43px]'>
+             <span className='text-2xl md:text-3xl text-[#0a8803]' style={{color: colors[0]?.color}}>CarTrek</span>
              
              </div>
 							</h2>
