@@ -6,11 +6,10 @@ import { ShareContext } from "../../../ShareProvider/ShareProvider";
 const TimeZone = () => {
   const{colors}=useContext(ShareContext)
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
-  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentTime(new Date());
+      setCurrentDateTime(new Date());
     }, 1000);
 
     return () => {
@@ -53,7 +52,7 @@ const TimeZone = () => {
      <div>
      <img src="https://i.ibb.co/NSqyvK0/618-XO0-Z6-S7-L-AC-UF350-350-QL80-removebg-preview.png" alt="" className="w-32 h-32 mx-auto rounded-full" />
      <div className='p-3 mt-3 rounded-md shadow-lg shadow-[white]' style={{boxShadow: colors[0]?.color}}>
-     <p className="text-2xl lg:text-3xl font-bold">{currentTime.toLocaleTimeString()}</p>
+     <p className="text-2xl lg:text-3xl font-bold">{currentDateTime.toLocaleTimeString()}</p>
       <p>{formatDay(currentDateTime)} {formatDate(currentDateTime)}</p>
       <p></p>
      </div>
