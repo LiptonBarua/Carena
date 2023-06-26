@@ -24,7 +24,7 @@ const SmallBanner = () => {
             </div>
            </div>
            <button className="h-10 px-7 transition-colors text-white bg-[#0a8803]" style={{backgroundColor: colors[0]?.color}}>BOOK NOW</button>
-           <div className='pl-8 mt-2 flex justify-between text-[#0a8803]' style={{color: colors[0]?.color}}>
+           <div className='pl-8 mt-2 flex justify-between text-[white]'>
             <small>01538278521</small>
             <small>lliptonbarua274@gmail.com</small>
            </div>

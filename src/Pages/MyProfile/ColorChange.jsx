@@ -34,7 +34,7 @@ const ColorChange = () => {
         .catch('color change is not a successfully')
     }
     return (
-        <div className='flex justify-between'>
+        <div className='flex justify-between items-center'>
         <h1 className="text-lg font-bold text-black m-6  ">Profile Information</h1>
              <div>
      {/* <input type="text" value={color} onChange={(e)=>setColor(e.target.value)} /> */}
