@@ -14,7 +14,7 @@ const CarDealer = () => {
             <p className='text-[#0a8803] font-bold' style={{color: colors[0]?.color}}>Top Rated Dealer</p>
             <h1 className='font-bold text-2xl md:text-3xl text-black'>Best Customer Experience</h1>
             </div>
-            <div className='px-4 md:px-0 flex justify-center'>
+            <div className='px-4 md:px-0 lg:flex lg:justify-center'>
                 <img src="https://i.ibb.co/V2YPZ8m/Capture.png" alt="" />
             </div>
             </div>

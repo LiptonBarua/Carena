@@ -30,7 +30,7 @@ const OfferBanners = ({offer}) => {
       }, []);
 
     return (
-        <div data-aos="fade-left" className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#0a8803] hover:text-white"  style={{transition: `1s`, backgroundColor: isHovering ? colors[0]?.color : '',  border: isHovering ? 'black' : colors[0]?.color, color: isHovering? 'white' : 'black'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div data-aos="fade-right" className="flex flex-col items-center py-16 px-8 bg-[#eae5e5] hover:bg-[#0a8803] hover:text-white"  style={{transition: `1s`, backgroundColor: isHovering ? colors[0]?.color : '',  border: isHovering ? 'black' : colors[0]?.color, color: isHovering? 'white' : 'black'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 		<h1 className='text-6xl'>{icon}</h1>
 			<h3 className="mt-5 text-xl font-semibold">{name}</h3>
 			<h3 className="text-2xl font-semibold">{title}</h3>
