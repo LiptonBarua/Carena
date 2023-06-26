@@ -57,8 +57,8 @@ const offerData=[
 
     return (
         <section className="mb-16" style={{ backgroundImage: `url(https://4.bp.blogspot.com/-QAAtUt2yuSc/XGkB_h3K3MI/AAAAAAAA6GE/L2ztZEZKuQQ7joQ2Mi9pqZh3f-y0paFQwCLcBGAs/s1600/2019_nissan_terra_fiery_red.jpg)`, backgroundSize: `cover`, backgroundRepeat: `no-repeat` }}>
-      <div className="flex bg-[#000000c2] bg-opacity-80 flex-col justify-center p-6 mx-auto sm:py-12 lg:py-32 lg:flex-row lg:justify-between">
-      <section className="md:max-w-[85%] mx-auto">
+      <div className="flex bg-[#000000c2] bg-opacity-80 flex-col justify-center px-4 py-6 md:px-16 lg:px-0 lg:mx-auto sm:py-12 lg:py-32 lg:flex-row lg:justify-between">
+      <section className="lg:max-w-[85%] lg:mx-auto">
 	<div className="text-center text-white">
 		<h2 className="text-3xl lg:text-5xl">What We Offer</h2>
 		<p className="dark:text-gray-400">Tempor incididunt labore dolore duis lorem magna aliqua sed ipsum.</p>
@@ -75,7 +75,7 @@ const offerData=[
 	</div>
 </div>
 </div>
-	<div className="container lg:-mb-48 mx-auto grid justify-center gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+	<div className=" lg:-mb-48 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 {
 	offerData?.map(offer=><OfferBanners key={offer.id} offer={offer}></OfferBanners>)
 }

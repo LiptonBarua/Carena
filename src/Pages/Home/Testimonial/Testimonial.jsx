@@ -23,7 +23,7 @@ const Testimonial = () => {
     return (
         <section className="" style={{ backgroundImage: `url(https://c4.wallpaperflare.com/wallpaper/736/452/852/nissan-skyline-gt-r-nissan-nissan-gtr-nissan-gtr-r34-wallpaper-preview.jpg)`, backgroundSize: `cover`, backgroundRepeat: `no-repeat` }}>
             <div className="flex py-24 bg-[#000000c2] bg-opacity-80 flex-col px-4 md:px-16 sm:py-12 lg:pt-32 lg:flex-row lg:justify-between">
-                <section className="lg:max-w-[85%] lg:mx-auto">
+               
 
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-y-20 md:-mb-28'>
                    {
@@ -31,7 +31,7 @@ const Testimonial = () => {
                    }
                        
                     </div>
-                </section>
+            
             </div>
         </section>
     );
