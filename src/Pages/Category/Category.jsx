@@ -1,4 +1,4 @@
-import moment from 'moment/moment';
+
 import { useContext, useEffect, useState } from 'react';
 import { MdVerified} from "react-icons/md";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -8,6 +8,7 @@ import useSaller from '../../Hookes/useSaller';
 import useBuyer from '../../Hookes/useBuyer';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { ShareContext } from '../../ShareProvider/ShareProvider';
+import moment from 'moment';
 
 
 const Category = ({products, setProductsName}) => {

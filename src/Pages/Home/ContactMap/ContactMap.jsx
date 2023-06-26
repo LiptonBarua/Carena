@@ -17,7 +17,7 @@ const ContactMap = () => {
     return (
         <div>
             <section className="lg:flex h-auto bg-black">
-                <div className=" w-full px-5 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8">
+                <div className=" w-full px-5 py-12 md:px-16 lg:w-1/2 lg:px-8">
                    <div className='mb-8'>
                    <p className='text-white'>Get in Touch</p>
                     <h1 className='text-white font-semibold text-3xl pb-5'>Send Us Message</h1>
@@ -71,7 +71,7 @@ const ContactMap = () => {
                 </div>
 
                 <div className=" lg:w-1/2">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.573489111011!2d91.84162477447407!3d22.369727890376875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ad2777c9c1cf83%3A0xb8796c419fa1021b!2sBahaddarhat%2C%20Chattogram!5e0!3m2!1sen!2sbd!4v1684591968657!5m2!1sen!2sbd" className='h-72 md:h-96 lg:h-full w-full px-5 md:px-0' style={{ border: `0` }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.573489111011!2d91.84162477447407!3d22.369727890376875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ad2777c9c1cf83%3A0xb8796c419fa1021b!2sBahaddarhat%2C%20Chattogram!5e0!3m2!1sen!2sbd!4v1684591968657!5m2!1sen!2sbd" className='h-72 md:h-96 lg:h-full w-full  md:px-0' style={{ border: `0` }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                 </div>
             </section>
