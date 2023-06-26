@@ -76,7 +76,7 @@ const AllUser = () => {
   }
   return (
     <div className=''>
-      <h1 className='text-2xl lg:mb-10 ml-5 text-[#0a8803]' style={{color: colors[0]?.color}}>All User : {users?.length}</h1>
+      <h1 className='text-2xl lg:mb-10 ml-5 mt-4 text-[#0a8803]' style={{color: colors[0]?.color}}>All User : {users?.length}</h1>
       <div className='hidden lg:block'>
         <div className="overflow-x-auto ">
 

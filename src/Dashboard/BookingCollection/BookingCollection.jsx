@@ -51,7 +51,7 @@ const Bookings = () => {
     <>
       {
         isBuyer && <div>
-          <h1 className='text-2xl lg:mb-8 ml-5 font-bold text-[#0a8803]' style={{ color: colors[0]?.color }}>Booking: {bookings.length}</h1>
+          <h1 className='text-2xl lg:mb-8 ml-5 mt-4 font-bold text-[#0a8803]' style={{ color: colors[0]?.color }}>Booking: {bookings.length}</h1>
           <div>
 
             <div className="overflow-x-auto hidden lg:block">
