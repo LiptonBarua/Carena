@@ -91,7 +91,7 @@ const Header = () => {
 						<Link to="/">
 							<h2 className="relative text-2xl font-bold flex items-center">
               <img src='https://i.ibb.co/MV0Sz02/logo-removebg-preview-1.png' alt="" className='w-10 md:w-14 z-10' />
-             <div className='absolute mb-2 ml-[32px] md:ml-[43px]'>
+             <div className='absolute mb-2 ml-[31px] md:ml-[43px]'>
              <span className='text-2xl md:text-3xl text-[#0a8803]' style={{color: colors[0]?.color}}>CarTrek</span>
              
              </div>
@@ -122,12 +122,12 @@ const Header = () => {
 						</div>
 					</div>
 				</div>
-				<div className="flex items-center dark:text-white gap-4">
+				<div className="flex items-center gap-4">
 					<div
 
 						className={`text-center flex-1 justify-self-center items-center pb-3 mt-10 lg:block md:pb-0 md:mt-0 cursor-pointer ${navbar ? "hidden" : "block"
 							}`}>
-						<ul className="items-center justify-center font-semibold ul  space-y-5 lg:flex lg:space-x-6 lg:space-y-0  dark:text-white">
+						<ul className="items-center justify-center font-semibold ul  space-y-5 lg:flex lg:space-x-6 lg:space-y-0 ">
 							{manuItem}
 						</ul>
 					</div>

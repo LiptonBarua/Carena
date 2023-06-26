@@ -11,7 +11,7 @@ const Payment = () => {
     const navigation = useNavigation()
   
     const {price,title} = booking;
-    const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
+    const stripePromise = loadStripe('pk_test_51M6UcADfQQzfn6YSeSDXwz7xVxTsKaK0J57rysnG5ALNNCg7VREjmcbbiPikVrgXFzCftHvxuMvOvngrOip6YoXX00zfXHjQEo');
    
     if(navigation.state==='loading'){
         return <Loading></Loading>

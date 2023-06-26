@@ -79,14 +79,15 @@ const{colors}=useContext(ShareContext)
     }
     return (
         <div>
-            <h1 className='text-2xl ml-6 text-[#0a8803]' style={{color: colors[0]?.color}}>Product Add</h1>
-            <div>
+            {/* <h1 className='text-2xl ml-6 text-[#0a8803] font-bold' style={{color: colors[0]?.color}}>Product Add</h1> */}
+            <h1 className='fixed text-2xl w-48 px-3 py-2 text-[white] bg-[#0a8803] font-bold' style={{backgroundColor: colors[0]?.color}}>Product Add</h1>
+         
 
-                <div className=' p-7'>
+                <div className='p-7'>
                     <form onSubmit={handleSubmit(handleAddProduct)}>
 
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4  mt-16">
                             <div className="form-control w-full">
                                 <label className="label"><span className="label-text">First Name</span></label>
                                 <input placeholder='Enter Your First Name' defaultValue={profile[0]?.firstName} readOnly type="text" {...register("firstName", { required: 'Name is Required' })} className="bg-gray-200 input input-bordered w-full" />
@@ -167,7 +168,7 @@ const{colors}=useContext(ShareContext)
                     </form>
 
                 </div>
-            </div>
+           
 
         </div>
     );
