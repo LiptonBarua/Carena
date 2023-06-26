@@ -5,7 +5,7 @@ const Footer = () => {
     return (
       <footer aria-label="Site Footer"  style={{ backgroundImage: `url(https://i.ibb.co/BtCbpKq/car-nissan-race-cars-road-wallpaper-preview.jpg)`, backgroundSize: `cover`, backgroundRepeat: `no-repeat` }}>
       <div
-        className="bg-[#000000ae] bg-opacity-80 pt-16 space-y-8"
+        className="bg-[#000000ae] bg-opacity-80 px-4 pt-16 space-y-8"
       >
         
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3  lg:px-8">

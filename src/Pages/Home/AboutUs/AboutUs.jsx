@@ -33,8 +33,8 @@ const AboutUs = () => {
 
 	return (
 		<div className='py-20 lg:max-w-[90%] lg:mx-auto'>
-			<section className="dark:bg-gray-800 dark:text-gray-100">
-				<div className="px-4 md:px-16 py-12 space-y-24 lg:px-8 lg:max-w-7xl">
+			<section className="">
+				<div className="px-4 md:px-16 py-12 lg:space-y-24 lg:px-8 lg:max-w-7xl">
 
 					<div className="grid lg:gap-8 grid-cols-1 lg:grid-cols-2 ">
 						<div>
