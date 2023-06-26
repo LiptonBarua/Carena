@@ -3,13 +3,17 @@ import { MdVerified} from "react-icons/md";
 import {HiOutlineTrash } from "react-icons/hi";
 import { useContext, useEffect, useState } from 'react';
 import { ShareContext } from '../../ShareProvider/ShareProvider';
+import useBuyer from '../../Hookes/useBuyer';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
 const MyProduct = ({product, handleDeleteProduct, handleAdvertice}) => {
-  const{_id,image,email, title, location, phone, date, original, resale, name, year, advertice} =product;
+  const{_id,image,email, title, location, phone, date, original, resale, firstName, lastName, year, advertice} =product;
   const [loadUserData, setLoadUserData] = useState([]);
   const [userData, setUserData] = useState({});
+  const{user}=useContext(AuthContext)
 const{colors}=useContext(ShareContext)
+const [isBuyer] = useBuyer(user?.email);
 
 
 
@@ -25,10 +29,22 @@ useEffect(() => {
   setUserData(data);
 }, [email, loadUserData])
 
+
+const [isHovering, setIsHovering] = useState(false);
+ 
+
+const handleMouseEnter = () => {
+  setIsHovering(true);
+};
+
+const handleMouseLeave = () => {
+  setIsHovering(false);
+};
+
     return (
         <div>
           {
-            !advertice && <div>
+            !advertice &&  <div>
             <article className="overflow-hidden shadow transition hover:shadow-lg">
               <img
                 alt="Office"
@@ -36,8 +52,8 @@ useEffect(() => {
                 className=" w-full h-72 object-cover"
               />
             
-              <div className=' flex justify-end -mt-12'>
-                <button className='bg-[#0a8803] text-white hover:bg-black font-bold  px-6 py-3' >
+              <div className=' flex justify-end -mt-10'>
+                <button className='bg-[#0a8803] text-white hover:bg-black font-bold  px-5 py-2' style={{backgroundColor: isHovering ? 'black' : colors[0]?.color,  border: isHovering ? 'black' : colors[0]?.color,}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                   <div className='flex items-center'>
                     <del className='text-sm mr-1'>{original}</del>
                     <h1 className='text-md'>{resale}</h1>
@@ -61,15 +77,13 @@ useEffect(() => {
                     {title}
                   </h3>
                 </a>
-                <h4 className=' text-lg flex items-center font-bold'>{name}{userData?.isVerified && <span className=' text-blue-500 ml-1'><MdVerified></MdVerified></span>}</h4>
+                <h4 className=' text-lg flex items-center font-bold'>{firstName} {lastName}{userData?.isVerified && <span className=' text-blue-500 ml-1'><MdVerified></MdVerified></span>}</h4>
                 <p>Location: {location}</p>
                 <p>Phone: {phone}</p>
-                <div>
                 <div className='flex justify-between mt-4'>
                 <button onClick={()=>handleAdvertice(_id)} className="">Advertise</button>
                <button onClick={()=>handleDeleteProduct(_id)} className="text-3xl text-[#0a8803]" style={{color: colors[0]?.color}}><HiOutlineTrash></HiOutlineTrash></button>
                </div>
-                </div>
               </div>
             </article>
             
