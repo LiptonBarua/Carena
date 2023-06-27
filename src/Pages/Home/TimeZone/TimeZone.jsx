@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import {BsWatch} from "react-icons/bs";
 import { ShareContext } from "../../../ShareProvider/ShareProvider";
-
+import Clock from "react-clock";
+import 'react-clock/dist/Clock.css'
 
 const TimeZone = () => {
   const{colors}=useContext(ShareContext)
@@ -46,15 +47,22 @@ const TimeZone = () => {
   };
 
 
+  useEffect(()=>{
+    setInterval(()=>{
+      setCurrentDateTime(new Date())
+    })
+  },1000)
+
   return (
    <div style={{backgroundImage: `url(https://w0.peakpx.com/wallpaper/20/744/HD-wallpaper-black-pattern-black-design-modern.jpg)`}}>
-     <div className='flex justify-center pt-5 pb-10 text-white'>
+     <div className='flex justify-center py-8 text-white'>
      <div>
-     <img src="https://i.ibb.co/NSqyvK0/618-XO0-Z6-S7-L-AC-UF350-350-QL80-removebg-preview.png" alt="" className="w-32 h-32 mx-auto rounded-full" />
-     <div className='p-3 mt-3 rounded-md shadow-lg shadow-[#ffffff]' style={{boxShadow: colors[0]?.color}}>
+     <div>
+      <Clock className='bg-info text-black rounded-full w-10' value={currentDateTime} renderNumbers={true}></Clock>
+    </div>
+     <div className=' rounded-md shadow-lg mt-3 shadow-[#ffffff]' style={{boxShadow: colors[0]?.color}}>
      <p className="text-2xl lg:text-3xl font-bold">{formatTime(currentDateTime)}</p>
       <p>{formatDay(currentDateTime)} {formatDate(currentDateTime)}</p>
-      <p></p>
      </div>
      </div>
     </div>

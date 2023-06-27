@@ -12,8 +12,8 @@ import ContactMap from '../ContactMap/ContactMap';
 import Advertice from '../Advertice/Advertice';
 import CategoriesName from '../CategoriesName/CategoriesName';
 import Testimonial from '../Testimonial/Testimonial';
-import Practice from '../Practice/Practice';
 import TimeZone from '../TimeZone/TimeZone';
+import Practice from '../Practice/Practice';
 
 const Home = () => {
     return (
