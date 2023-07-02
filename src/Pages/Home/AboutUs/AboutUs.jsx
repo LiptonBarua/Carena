@@ -31,6 +31,7 @@ const AboutUs = () => {
 	  }, []);
 
 
+	  
 	return (
 		<div className='py-20 lg:max-w-[90%] lg:mx-auto'>
 			<section className="dark:bg-gray-800 dark:text-gray-100">
@@ -55,6 +56,7 @@ const AboutUs = () => {
 						<div aria-hidden="true" className="mt-10 lg:mt-0">
 							<div className='flex'>
 								<div data-aos="fade-right" className='hidden lg:block'>
+									
 									<img className='w-[650px] h-[700px] -mt-20' src="https://i.ibb.co/CvvzS3S/bg-2.png" alt="" />
 								</div>
 								<div>
