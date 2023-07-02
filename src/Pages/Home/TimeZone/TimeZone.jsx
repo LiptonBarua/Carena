@@ -58,9 +58,9 @@ const TimeZone = () => {
      <div className='flex justify-center py-8 text-white'>
      <div>
      <div>
-      <Clock className='bg-info text-black rounded-full w-10' value={currentDateTime} renderNumbers={true}></Clock>
+      <Clock className='bg-info text-black rounded-full' value={currentDateTime} renderNumbers={true}></Clock>
     </div>
-     <div className=' rounded-md shadow-lg mt-3 shadow-[#ffffff]' style={{boxShadow: colors[0]?.color}}>
+     <div className=' rounded-md shadow-lg px-3 mt-3 shadow-[#ffffff]' style={{boxShadow: colors[0]?.color}}>
      <p className="text-2xl lg:text-3xl font-bold">{formatTime(currentDateTime)}</p>
       <p>{formatDay(currentDateTime)} {formatDate(currentDateTime)}</p>
      </div>
