@@ -57,7 +57,7 @@ const AboutUs = () => {
 							<div className='flex'>
 								<div data-aos="fade-right" className='hidden lg:block'>
 									
-									<img className='w-[650px] h-[700px] -mt-20' src="https://i.ibb.co/CvvzS3S/bg-2.png" alt="" />
+									<img className='w-[650px] h-[700px] -mt-20' src="https://i.ibb.co/jMsygHW/civic-hatchback-removebg-preview.png" alt="" />
 								</div>
 								<div>
 									<div className="flex items-center space-x-2 sm:space-x-4 mb-10">
